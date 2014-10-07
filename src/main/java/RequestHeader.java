@@ -42,6 +42,25 @@ public class RequestHeader extends HttpServlet {
         String value = request.getHeader(name);
         
 	}
-        out.println("Plushki vot vam");
+        out.println("Plushki vot Post");
+	}
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+
+        PrintWriter out = response.getWriter();
+
+        Enumeration e = request.getHeaderNames();
+
+        while (e.hasMoreElements()) {
+
+        String name = (String)e.nextElement();
+
+        String value = request.getHeader(name);
+        
+	}
+        out.println("Plushki vot Get");
 	}
 }
