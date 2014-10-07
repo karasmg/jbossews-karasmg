@@ -41,7 +41,7 @@ public class RequestHeader extends HttpServlet {
 
         String value = request.getHeader(name);
 
-        out.println(name + " = " + value);
+        out.println("Плюшки вот какие вкусные");
 	}
 	}
 }
