@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RequestHeader
  */
-@WebServlet("/RequestHeader")
+@WebServlet("/RequestProsto")
 public class RequestHeader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
