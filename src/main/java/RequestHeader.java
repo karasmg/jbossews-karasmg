@@ -40,8 +40,8 @@ public class RequestHeader extends HttpServlet {
         String name = (String)e.nextElement();
 
         String value = request.getHeader(name);
-
-        out.println("Plushki vot kaki vkusnie");
+        
 	}
+        out.println("Plushki vot vam");
 	}
 }
