@@ -53,4 +53,12 @@ public class RequestInfoFilter extends BaseFilter{
 		// TODO Auto-generated method stub
 	}
 
+
+	@Override
+	public void doFilter(HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
