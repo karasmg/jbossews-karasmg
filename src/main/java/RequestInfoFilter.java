@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet Filter implementation class BaseFilter
  */
 @WebFilter(asyncSupported = true, urlPatterns = { "/BaseFilter" })
-public abstract class RequestInfoFilter implements Filter {
+public class RequestInfoFilter extends BaseFilter{
 
     /**
      * Default constructor. 
@@ -25,25 +25,26 @@ public abstract class RequestInfoFilter implements Filter {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		doFilter((HttpServletRequest) request, (HttpServletResponse) response);
+	String method = request.getMethod();
+	String remoteAddr = request.getRemoteAddr();
+	String queryString = request.getQueryString();
+	String protocol = request.getProtocol();
 
 		// pass the request along the filter chain
+		//отдаем управление дальше
 		chain.doFilter(request, response);
+		//альтернативные варианты:
+		//response.sendError(503);
+		//response.sendRedirect("/what.jsp");
 	}
 
-	public abstract void doFilter(HttpServletRequest request, HttpServletResponse response);
+	
 
 	/**
 	 * @see Filter#init(FilterConfig)
