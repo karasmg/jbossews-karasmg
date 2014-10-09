@@ -34,6 +34,7 @@ body
    padding: 0;
 }
 </style>
+<link href="cupertino/jquery.ui.all.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 a
 {
@@ -221,16 +222,6 @@ a:hover
 {
    text-align: left;
 }
-#Editbox1
-{
-   border: 1px #A9A9A9 solid;
-   background-color: #FFFFFF;
-   color :#000000;
-   font-family: Arial;
-   font-size: 13px;
-   text-align: left;
-   vertical-align: middle;
-}
 #Button1
 {
    border: 1px #A9A9A9 solid;
@@ -253,16 +244,6 @@ a:hover
 {
    white-space: nowrap;
 }
-#TextArea1
-{
-   border: 1px #A9A9A9 solid;
-   background-color: #FFFFFF;
-   color :#000000;
-   font-family: Arial;
-   font-size: 13px;
-   text-align: left;
-   resize: none;
-}
 #wb_Text7 
 {
    background-color: transparent;
@@ -274,7 +255,41 @@ a:hover
 {
    text-align: left;
 }
+#AutoComplete1
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   text-align: left;
+   vertical-align: middle;
+}
+ .ui-menu-item
+{
+   font-family: Arial;
+   font-size: 13px;
+}
 </style>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="jquery.ui.position.min.js"></script>
+<script type="text/javascript" src="jquery.ui.menu.min.js"></script>
+<script type="text/javascript" src="jquery.ui.autocomplete.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+   var AutoComplete1Data = ["New item", "New item", "New item", "New item"];
+   var AutoComplete1Opts =
+   {
+      source: AutoComplete1Data,
+      delay: 0,
+      minLength: 1
+   };
+   $("#AutoComplete1").autocomplete(AutoComplete1Opts);
+});
+</script>
 </head>
 <body>
 <div id="space"><br></div>
@@ -344,9 +359,8 @@ a:hover
 <span style="color:#000000;font-family:Arial;font-size:13px;">Искать</span></div>
 <div id="wb_Text8" style="position:absolute;left:7px;top:93px;width:70px;height:16px;z-index:19;text-align:left;">
 <span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Товары</strong></span></div>
-<input type="text" id="Editbox1" style="position:absolute;left:9px;top:126px;width:457px;height:20px;line-height:20px;z-index:20;" name="Editbox1" value="Мешочек Сильпо средний">
-<input type="submit" id="Button1" name="Find" value="Найти" style="position:absolute;left:472px;top:126px;width:96px;height:24px;z-index:21;">
-<table style="position:absolute;left:0px;top:262px;width:660px;height:491px;z-index:22;" cellpadding="0" cellspacing="1" id="Table1">
+<input type="submit" id="Button1" name="Find" value="Найти" style="position:absolute;left:472px;top:126px;width:96px;height:24px;z-index:20;">
+<table style="position:absolute;left:0px;top:262px;width:660px;height:491px;z-index:21;" cellpadding="0" cellspacing="1" id="Table1">
 <tr>
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:34px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> <strong>Что</strong>: </span><span style="color:#00B050;font-family:Arial;font-size:13px;">Мешочек сильпо средний</span><span style="color:#000000;font-family:Arial;font-size:13px;"> <strong>Где</strong>:</span><span style="color:#00B050;font-family:Arial;font-size:13px;">&quot;МАГАЗИН &quot;&quot;Сильпо&quot;&quot; г. Запорожье ул. Грязнова 6&quot;</span><span style="color:#000000;font-family:Arial;font-size:13px;">&nbsp; </span></div>
 <div><span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Когда</strong>:</span><span style="color:#00B050;font-family:Arial;font-size:13px;">07.01.2010 9:01:43 </span><span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Почем</strong>:</span><span style="color:#00B050;font-family:Arial;font-size:13px;">1,2</span></div>
@@ -416,12 +430,9 @@ a:hover
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:20px;">&nbsp;</td>
 </tr>
 </table>
-<textarea name="TextArea1" id="TextArea1" style="position:absolute;left:9px;top:149px;width:457px;height:87px;z-index:23;" rows="4" cols="70">Мешочек Сильпо средний 1
-Мешочек Сильпо средний 2
-Мешочек Сильпо средний 3
-Мешочек Сильпо средний 4</textarea>
-<div id="wb_Text7" style="position:absolute;left:7px;top:243px;width:201px;height:16px;z-index:24;text-align:left;">
+<div id="wb_Text7" style="position:absolute;left:7px;top:243px;width:201px;height:16px;z-index:22;text-align:left;">
 <span style="color:#000000;font-family:Arial;font-size:13px;">Найдено 4 позиции:</span></div>
+<input type="text" id="AutoComplete1" style="position:absolute;left:10px;top:126px;width:453px;height:20px;line-height:20px;z-index:23;" name="AutoComplete1" value="">
 </div>
 </body>
 </html>
