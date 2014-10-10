@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class BaseFilter
  */
-@WebFilter(asyncSupported = true, urlPatterns = { "/*" })
+@WebFilter("/*")
 public abstract class BaseFilter implements Filter {
 
     /**
