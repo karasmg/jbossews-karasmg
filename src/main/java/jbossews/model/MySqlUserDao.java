@@ -65,7 +65,8 @@ public class MySqlUserDao implements UserDao {
 				g.setGpsPoint(rs.getString("GPSpoint"));
 				g.setAddress(rs.getString("Address"));			 
 				list.add(g);
-		 } return list;	}
+		 } 
+		 return list;	}
 
 	/**
 	 * @return the connection
