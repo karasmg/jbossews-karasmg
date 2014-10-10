@@ -45,7 +45,12 @@ public class RequestHeader extends HttpServlet {
         
         
 	}
-        out.println("Plushki vot Post");
+        out.println("Аттрибуты:");
+        out.println("method = "+request.getAttribute("method"));
+        out.println("remoteAddr = "+request.getAttribute("remoteAddr"));
+        out.println("queryString = "+request.getAttribute("queryString"));
+        out.println("protocol = "+request.getAttribute("protocol"));
+        
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

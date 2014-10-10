@@ -44,11 +44,10 @@ public class RequestInfoFilter implements Filter{
 		String remoteAddr = hsr.getRemoteAddr();
 		String queryString = hsr.getQueryString();
 		String protocol = hsr.getProtocol();
-		System.out.println(">>Проходим RequestInfoFilter:");
-		System.out.println("  >>"+method);
-		System.out.println("  >>"+remoteAddr);
-		System.out.println("  >>"+queryString);
-		System.out.println("  >>"+protocol);
+		hsr.setAttribute("method", method);
+		hsr.setAttribute("remoteAddr", remoteAddr);
+		hsr.setAttribute("queryString", queryString);
+		hsr.setAttribute("protocol", protocol);
 			// pass the request along the filter chain
 			//отдаем управление дальше
 			chain.doFilter(request, response);
