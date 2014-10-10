@@ -63,13 +63,7 @@ public class RequestHeader extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        Enumeration e = request.getHeaderNames();
 
-        while (e.hasMoreElements()) {
-
-        String name = (String)e.nextElement();
-
-        String value = request.getHeader(name);
         MySqlDataFactory daoFactory = new MySqlDataFactory();
         try {
 			Connection con = daoFactory.getConnection();
@@ -84,16 +78,27 @@ public class RequestHeader extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+     /*   String url = "jdbc:mysql://127.0.0.1:/db4";
+
+        Class.forName("org.gjt.mm.mysql.Driver");
+
+        Connection cn = null;
+
+        try {
+
+     cn = DriverManager.getConnection(url, "root", "");
+
+         PreparedStatement st = null;
+
+          try {
+
+       st = cn.prepareStatement(*/
         out.println(users);
 	}
-       /*
-        out.println("Аттрибуты:");
-        out.println("method = "+request.getAttribute("method"));
-        out.println("remoteAddr = "+request.getAttribute("remoteAddr"));
-        out.println("queryString = "+request.getAttribute("queryString"));
-        out.println("protocol = "+request.getAttribute("protocol"));
-        */
+      
+    
         
         
-	}
 }
+
