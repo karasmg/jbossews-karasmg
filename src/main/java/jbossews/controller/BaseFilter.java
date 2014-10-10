@@ -37,15 +37,15 @@ public abstract class BaseFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		doFilter((HttpServletRequest) request, (HttpServletResponse) response);
+	//	doFilter((HttpServletRequest) request, (HttpServletResponse) response);
 		System.out.println(">>Проходим BaseFilter");
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}
 
-	public abstract void doFilter(HttpServletRequest request, HttpServletResponse response);
+	//public abstract void doFilter(HttpServletRequest request, HttpServletResponse response);
 
 	/**
 	 * @see Filter#init(FilterConfig)
