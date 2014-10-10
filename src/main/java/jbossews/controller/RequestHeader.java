@@ -1,3 +1,5 @@
+package jbossews.controller;
+
 
 
 import java.io.IOException;
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RequestHeader
  */
-@WebServlet("/RequestProsto")
+@WebServlet("/viewusers.html")
 public class RequestHeader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,6 +42,7 @@ public class RequestHeader extends HttpServlet {
         String name = (String)e.nextElement();
 
         String value = request.getHeader(name);
+        
         
 	}
         out.println("Plushki vot Post");

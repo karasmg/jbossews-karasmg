@@ -1,3 +1,5 @@
+package jbossews.controller;
+
 
 
 import java.io.IOException;
@@ -15,50 +17,41 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class BaseFilter
  */
-@WebFilter(asyncSupported = true, urlPatterns = { "/BaseFilter" })
-public class RequestInfoFilter extends BaseFilter{
+@WebFilter(asyncSupported = true, urlPatterns = { "/*" })
+public abstract class BaseFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public RequestInfoFilter() {
+    public BaseFilter() {
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see Filter#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-	String method = request.getMethod();
-	String remoteAddr = request.getRemoteAddr();
-	String queryString = request.getQueryString();
-	String protocol = request.getProtocol();
-
+		doFilter((HttpServletRequest) request, (HttpServletResponse) response);
+		System.out.println(">>Проходим BaseFilter");
 		// pass the request along the filter chain
-		//отдаем управление дальше
 		chain.doFilter(request, response);
-		//альтернативные варианты:
-		//response.sendError(503);
-		//response.sendRedirect("/what.jsp");
 	}
 
-	
+	public abstract void doFilter(HttpServletRequest request, HttpServletResponse response);
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
-	}
-
-
-	@Override
-	public void doFilter(HttpServletRequest request,
-			HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -276,8 +276,8 @@ MemoryPoolMXBean item = (MemoryPoolMXBean) iter.next();
 </TABLE>
 <%
 	}
-%>
 
+%>>
 </BODY>
 </HTML>
 
