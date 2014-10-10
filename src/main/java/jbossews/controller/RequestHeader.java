@@ -118,6 +118,7 @@ public class RequestHeader extends HttpServlet {
 		 try {
 			while (rs.next()) { 
 				 User g = new User(); 
+				 out.println("|"+rs.getInt("idUser")+"|"+rs.getString("Name")+"|"+rs.getString("City")+"|"+rs.getString("Country")+"|"+rs.getString("GPSpoint")+"|"+rs.getString("Address")+"|");
 					g.setUserId(rs.getInt("idUser")); 
 					g.setName(rs.getString("Name")); 
 					g.setCity(rs.getString("City"));
@@ -130,12 +131,7 @@ public class RequestHeader extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    		   
-        out.println(list.toArray().toString());
-	
-      
-    
-        
+	       
 	}
 }
         
