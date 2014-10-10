@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet Filter implementation class BaseFilter
  */
 @WebFilter("/*")
-public abstract class RequestInfoFilter implements Filter{
+public class RequestInfoFilter implements Filter{
 
     /**
      * Default constructor. 
@@ -36,12 +36,14 @@ public abstract class RequestInfoFilter implements Filter{
 	}
 
 
-	public void doFilter(HttpServletRequest request, HttpServletResponse response,
+	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		String method = request.getMethod();
-		String remoteAddr = request.getRemoteAddr();
-		String queryString = request.getQueryString();
-		String protocol = request.getProtocol();
+		HttpServletRequest hsr = (HttpServletRequest)request;
+	 
+		String method = hsr.getMethod();
+		String remoteAddr = hsr.getRemoteAddr();
+		String queryString = hsr.getQueryString();
+		String protocol = hsr.getProtocol();
 		System.out.println(">>Проходим RequestInfoFilter:");
 		System.out.println("  >>"+method);
 		System.out.println("  >>"+remoteAddr);
