@@ -131,7 +131,7 @@ public class RequestHeader extends HttpServlet {
 			e.printStackTrace();
 		}
     		   
-        out.println(list);
+        out.println(list.toArray().toString());
 	
       
     
