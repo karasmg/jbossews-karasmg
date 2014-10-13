@@ -22,7 +22,7 @@
 		<%			e.printStackTrace();%>
 		<%		}%>
 <%		UserDao Ud = conn.getUserDao(db);%>
-<%		List<User> lst = new ArrayList();%>
+<%		List<User> lst = new ArrayList<User>();%>
 <%		try {%>
 	<%			lst = Ud.getAll();%>
 	<%		} catch (SQLException e) {%>

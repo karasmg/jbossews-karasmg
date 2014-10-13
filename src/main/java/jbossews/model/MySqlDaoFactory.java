@@ -6,8 +6,8 @@ import java.util.Properties;
 public class MySqlDaoFactory implements DaoFactory {
 	 private String user = "adminsBzzT2D"; //Логин пользователя 
 	 private String password = "9BLRREpyGu3K"; //Пароль пользователя 
-	// private String url = "jdbc:mysql://5434014fe0b8cde08b00017f-karasmg.rhcloud.com:45471/"; //URL адрес 
-	 private String url = "jdbc:mysql://127.0.0.1:45471/ppool?useUnicode=true&characterEncoding=UTF-8"; //URL адрес
+	 private String url = "jdbc:mysql://5434014fe0b8cde08b00017f-karasmg.rhcloud.com:45471/ppool?useUnicode=true&characterEncoding=UTF-8"; //URL адрес 
+	// private String url = "jdbc:mysql://127.0.0.1:45471/ppool?useUnicode=true&characterEncoding=UTF-8"; //URL адрес
 	 private String driver = "com.mysql.jdbc.Driver"; //Имя драйвера 
 	
 	 
