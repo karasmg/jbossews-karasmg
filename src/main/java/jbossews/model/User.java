@@ -8,6 +8,10 @@ public class User {
 	private String Country;
 	private String GpsPoint;
 	private String Address;
+	
+	public User(){
+		super();
+	}
 	/**
 	 * @return the userId
 	 */

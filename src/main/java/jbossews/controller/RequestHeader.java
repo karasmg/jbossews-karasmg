@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jbossews.model.DaoFactory;
-import jbossews.model.MySqlDataFactory;
+import jbossews.model.MySqlDaoFactory;
 import jbossews.model.MySqlUserDao;
 import jbossews.model.User;
 

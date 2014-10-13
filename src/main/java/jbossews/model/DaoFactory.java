@@ -8,6 +8,6 @@ public interface DaoFactory {
 	public Connection getConnection() throws SQLException; 
 	
 	/** Возвращает объект для управления персистентным состоянием объекта Group */ 
-	public UserDao getGroupDao(Connection connection); 
+	public UserDao getUserDao(Connection connection); 
 			
 }
