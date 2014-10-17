@@ -54,6 +54,14 @@ a:hover
    color: #0000FF;
    text-decoration: underline;
 }
+.hidden
+{
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   background-color: transparent;
+   visibility: hidden;
+}
 </style>
 <style type="text/css">
 #Image1
@@ -157,11 +165,6 @@ a:hover
    font-family: Arial;
    font-size: 13px;
 }
-#wb_Form2
-{
-   background-color: #FFFFFF;
-   border: 0px #000000 solid;
-}
 #wb_Text4 
 {
    background-color: transparent;
@@ -249,9 +252,6 @@ a:hover
 }
 #Table1
 {
-   border: 2px #C0C0C0 solid;
-   background-color: transparent;
-   border-spacing: 1px;
 }
 #Table1 td
 {
@@ -268,11 +268,6 @@ a:hover
    color: #000000;
    font-family: Arial;
    font-size: 13px;
-}
-#wb_Form3
-{
-   background-color: #FFFFFF;
-   border: 0px #000000 solid;
 }
 #wb_Text11 
 {
@@ -375,7 +370,7 @@ $(document).ready(function()
 });
 </script>
 </head>
-<body onload="ShowObject('wb_Form2', 0);ShowObject('wb_Form3', 0);ShowObject('Table1', 0);return false;">
+<body>
 <div id="space"><br></div>
 <div id="container">
 <div id="wb_Image1" style="position:absolute;left:379px;top:0px;width:300px;height:65px;z-index:26;">
@@ -420,7 +415,7 @@ $(document).ready(function()
 <input type="text" id="AutoComplete2" style="position:absolute;left:12px;top:58px;width:597px;height:23px;line-height:23px;z-index:3;" name="AutoComplete1" value="">
 </form>
 </div>
-<div id="wb_Form2" style="position:absolute;left:218px;top:269px;width:618px;height:208px;z-index:36;">
+<div id="wb_Form2" style="position:absolute;left:218px;top:269px;width:618px;height:208px;z-index:36;" class="hidden">
 <form name="Form2" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form2">
 <div id="wb_Text4" style="position:absolute;left:15px;top:12px;width:89px;height:16px;z-index:4;text-align:left;">
 <span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Где ищем?</strong></span></div>
@@ -447,7 +442,7 @@ $(document).ready(function()
 <span style="color:#000000;font-family:Arial;font-size:13px;"><a href="#" onclick="ShowObject('', 1);return false;">Укажите свое местонахождение</a></span></div>
 </form>
 </div>
-<table style="position:absolute;left:209px;top:697px;width:633px;height:257px;z-index:37;" cellpadding="0" cellspacing="1" id="Table1">
+<table style="position:absolute;left:209px;top:697px;width:616px;height:216px;z-index:37;" cellpadding="0" cellspacing="0" class="hidden" id="Table1">
 <tr>
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:320px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> Магазин</span></div>
 </td>
@@ -533,7 +528,7 @@ $(document).ready(function()
 <td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
 </tr>
 </table>
-<div id="wb_Form3" style="position:absolute;left:212px;top:486px;width:626px;height:183px;z-index:38;">
+<div id="wb_Form3" style="position:absolute;left:212px;top:486px;width:626px;height:183px;z-index:38;" class="hidden">
 <form name="Form3" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form3">
 <div id="wb_Text11" style="position:absolute;left:293px;top:121px;width:154px;height:16px;z-index:18;text-align:left;">
 <span style="color:#000000;font-family:Arial;font-size:13px;">Сортировка</span></div>
