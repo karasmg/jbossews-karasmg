@@ -16,28 +16,28 @@
 <%DaoFactory conn = new MySqlDaoFactory();%>
 <%		Connection db = null;%>
 <%		try {%>
-	<%			db = conn.getConnection();%>
-	<%		} catch (SQLException e) {%>
-		<%			// TODO Auto-generated catch block%>
-		<%			e.printStackTrace();%>
-		<%		}%>
+<%			db = conn.getConnection();%>
+<%		} catch (SQLException e) {%>
+<%			// TODO Auto-generated catch block%>
+<%			e.printStackTrace();%>
+<%		}%>
 <%		UserDao Ud = conn.getUserDao(db);%>
 <%		List<User> lst = new ArrayList<User>();%>
 <%		try {%>
-	<%			lst = Ud.getAll();%>
-	<%		} catch (SQLException e) {%>
-		<%			// TODO Auto-generated catch block%>
-		<%			e.printStackTrace();%>
-		<%		}%>
-	<table>
-	<%for(User m : lst){%>
-	<tr>
-	<td><%=m.getName()%></td>
-	<td><%=m.getCountry()%></td>
-	<td><%=m.getCity()%></td>
-	<td><%=m.getAddress()%></td>
-	</tr>
-	<%	}%>
+<%			lst = Ud.getAll();%>
+<%		} catch (SQLException e) {%>
+<%			// TODO Auto-generated catch block%>
+<%			e.printStackTrace();%>
+<%		}%>
+<table>
+<%for(User m : lst){%>
+<tr>
+<td><%=m.getName()%></td>
+<td><%=m.getCountry()%></td>
+<td><%=m.getCity()%></td>
+<td><%=m.getAddress()%></td>
+</tr>
+<%	}%>
 	
 	</table>
 </body>

@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Поиск лучшей цены</title>
+<style type="text/css">
+html, body
+{
+   height: 100%;
+}
+div#space
+{
+   width: 1px;
+   height: 50%;
+   margin-bottom: -543px;
+   float:left
+}
+div#container
+{
+   width: 970px;
+   height: 1086px;
+   margin: 0 auto;
+   position: relative;
+   clear: left;
+}
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+   margin: 0;
+   padding: 0;
+}
+</style>
+<link href="cupertino/jquery.ui.all.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+</style>
+<style type="text/css">
+#Image1
+{
+   border: 0px #000000 solid;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#AdvancedButton1
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton2
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton3
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton4
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text2 div
+{
+   text-align: left;
+}
+#AdvancedButton5
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#wb_Form1
+{
+   background-color: #FFFFFF;
+   border: 0px #000000 solid;
+}
+#Button2
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: center;
+}
+#wb_Text3 div
+{
+   text-align: center;
+}
+#Button3
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#AutoComplete2
+{
+   border: 2px #A9A9A9 solid;
+   -moz-border-radius: 1px;
+   -webkit-border-radius: 1px;
+   border-radius: 1px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   text-align: left;
+   vertical-align: middle;
+}
+ .ui-menu-item
+{
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Form2
+{
+   background-color: #FFFFFF;
+   border: 0px #000000 solid;
+}
+#wb_Text4 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text4 div
+{
+   text-align: left;
+}
+#wb_Text5 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text5 div
+{
+   text-align: left;
+}
+#wb_Text6 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text6 div
+{
+   text-align: left;
+}
+#wb_Text7 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text7 div
+{
+   text-align: left;
+}
+#wb_Text8 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text8 div
+{
+   text-align: left;
+}
+#Combobox1
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text9 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text9 div
+{
+   text-align: left;
+}
+#wb_Text10 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text10 div
+{
+   text-align: left;
+}
+#Table1
+{
+   border: 2px #C0C0C0 solid;
+   background-color: transparent;
+   border-spacing: 1px;
+}
+#Table1 td
+{
+   padding: 0px 0px 0px 0px;
+}
+#Table1 td div
+{
+   white-space: nowrap;
+}
+#Button1
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #F0F0F0;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Form3
+{
+   background-color: #FFFFFF;
+   border: 0px #000000 solid;
+}
+#wb_Text11 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text11 div
+{
+   text-align: left;
+}
+#Combobox2
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Combobox4
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Combobox5
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text12 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text12 div
+{
+   text-align: left;
+}
+#wb_Text13 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text13 div
+{
+   text-align: left;
+}
+#wb_Text15 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text15 div
+{
+   text-align: left;
+}
+#wb_Text14 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text14 div
+{
+   text-align: left;
+}
+</style>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="jquery.ui.position.min.js"></script>
+<script type="text/javascript" src="jquery.ui.menu.min.js"></script>
+<script type="text/javascript" src="jquery.ui.autocomplete.min.js"></script>
+<script type="text/javascript" src="wwb9.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+   var AutoComplete2Data = ["New item", "New item", "New item", "New item"];
+   var AutoComplete2Opts =
+   {
+      source: 'http://google.com',
+      delay: 0,
+      minLength: 3
+   };
+   $("#AutoComplete2").autocomplete(AutoComplete2Opts);
+});
+</script>
+</head>
+<body onload="ShowObject('wb_Form2', 0);ShowObject('wb_Form3', 0);ShowObject('Table1', 0);return false;">
+<div id="space"><br></div>
+<div id="container">
+<div id="wb_Image1" style="position:absolute;left:379px;top:0px;width:300px;height:65px;z-index:26;">
+<img src="images/wwb_img3.jpg" id="Image1" alt="" style="width:300px;height:65px;"></div>
+<div id="wb_Text1" style="position:absolute;left:0px;top:5px;width:70px;height:16px;z-index:27;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Сегодня:</strong></span></div>
+<!-- Date -->
+<div id="Html1" style="position:absolute;left:61px;top:6px;width:120px;height:21px;z-index:28">
+<div style="color:#000000;font-size:12px;font-family:Arial;font-weight:bold;font-style:normal;text-decoration:none" id="basicdate"></div>
+<script type="text/javascript">
+   var now = new Date();
+   var months = new Array('01','02','03','04','05','06','07','08','09','10','11','12');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+   today = date + "." + months[now.getMonth()] + "." + year;
+   var basicdate = document.getElementById('basicdate');
+   basicdate.innerHTML = today;
+</script></div>
+<button id="AdvancedButton1" type="button" name="" value="" style="position:absolute;left:759px;top:6px;width:60px;height:24px;z-index:29;">
+<div style="text-align:left"><span style="color:#000000;font-family:Arial;font-size:13px"><u>Справка</u></span></div>
+</button>
+<button id="AdvancedButton2" type="button" name="" value="" style="position:absolute;left:677px;top:6px;width:92px;height:24px;z-index:30;">
+<div style="text-align:left"><span style="color:#000000;font-family:Arial;font-size:13px"><u>Настройки</u></span></div>
+</button>
+<button id="AdvancedButton3" type="button" name="" value="" style="position:absolute;left:825px;top:6px;width:67px;height:24px;z-index:31;">
+<div style="text-align:left"><span style="color:#000000;font-family:Arial;font-size:13px"><u>Выйти</u></span></div>
+</button>
+<button id="AdvancedButton4" type="button" name="" value="" style="position:absolute;left:877px;top:6px;width:103px;height:24px;z-index:32;">
+<div style="text-align:left"><span style="color:#000000;font-family:Arial;font-size:13px"><u>Сменить язык</u></span></div>
+</button>
+<div id="wb_Text2" style="position:absolute;left:170px;top:2px;width:127px;height:19px;z-index:33;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;"><strong>Пользователь:</strong></span></div>
+<button id="AdvancedButton5" type="button" name="User" value="Вход" style="position:absolute;left:283px;top:0px;width:96px;height:24px;z-index:34;">
+<div style="text-align:center"><span style="color:#0000FF;font-family:Arial;font-size:16px"><b><u>Idealist &gt;&gt;</u></b></span></div>
+</button>
+<div id="wb_Form1" style="position:absolute;left:212px;top:106px;width:624px;height:152px;z-index:35;">
+<form name="Form1" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form1">
+<input type="submit" id="Button2" onclick="ShowObject('wb_Form2', 1);ShowObject('Combobox1', 0);ShowObject('wb_Text14', 0);ShowObject('wb_Text9', 0);return false;" name="Find" value="Найти" style="position:absolute;left:187px;top:109px;width:96px;height:24px;z-index:0;">
+<input type="submit" id="Button3" name="Remember" value="Запомнить" style="position:absolute;left:348px;top:108px;width:96px;height:24px;z-index:1;">
+<div id="wb_Text3" style="position:absolute;left:79px;top:22px;width:451px;height:16px;text-align:center;z-index:2;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Введите наименование товара</strong></span></div>
+<input type="text" id="AutoComplete2" style="position:absolute;left:12px;top:58px;width:597px;height:23px;line-height:23px;z-index:3;" name="AutoComplete1" value="">
+</form>
+</div>
+<div id="wb_Form2" style="position:absolute;left:218px;top:269px;width:618px;height:208px;z-index:36;">
+<form name="Form2" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form2">
+<div id="wb_Text4" style="position:absolute;left:15px;top:12px;width:89px;height:16px;z-index:4;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><strong>Где ищем?</strong></span></div>
+<input type="radio" id="RadioButton1" onclick="ShowObject('wb_Text9', 1);return false;" name="RadioButton1" value="off" style="position:absolute;left:146px;top:42px;z-index:5;">
+<input type="radio" id="RadioButton2" onclick="ShowObject('Combobox1', 1);return false;" name="RadioButton2" value="on" style="position:absolute;left:146px;top:82px;z-index:6;">
+<input type="radio" id="RadioButton3" onclick="ShowObject('wb_Text14', 1);return false;" name="RadioButton3" value="on" style="position:absolute;left:146px;top:124px;z-index:7;">
+<div id="wb_Text5" style="position:absolute;left:178px;top:43px;width:154px;height:16px;z-index:8;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Все Запорожье</span></div>
+<div id="wb_Text6" style="position:absolute;left:177px;top:83px;width:154px;height:16px;z-index:9;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Выбрать район</span></div>
+<div id="wb_Text7" style="position:absolute;left:178px;top:125px;width:154px;height:16px;z-index:10;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Магазины в радиусе</span></div>
+<div id="wb_Text8" style="position:absolute;left:316px;top:124px;width:44px;height:16px;z-index:11;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><a href="#" onclick="ShowObject('', 1);return false;">1 км</a></span></div>
+<select name="Combobox1" size="1" id="Combobox1" style="position:absolute;left:312px;top:82px;width:284px;height:20px;z-index:12;">
+</select>
+<div id="wb_Text9" style="position:absolute;left:314px;top:42px;width:154px;height:16px;z-index:13;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><a href="#" onclick="ShowObject('', 1);return false;">Изменить город</a></span></div>
+<input type="checkbox" id="Checkbox1" name="Checkbox1" value="on" style="position:absolute;left:15px;top:175px;z-index:14;">
+<div id="wb_Text10" style="position:absolute;left:43px;top:176px;width:250px;height:16px;z-index:15;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Запомнить параметры поиска</span></div>
+<input type="submit" id="Button1" onclick="ShowObject('wb_Form1', 0);ShowObject('wb_Form2', 0);MoveObject('wb_Form3',220,89);MoveObject('Table1',220,289);ShowObject('wb_Form3', 1);ShowObject('Table1', 1);return false;" name="Find" value="Найти" style="position:absolute;left:501px;top:171px;width:96px;height:24px;z-index:16;">
+<div id="wb_Text14" style="position:absolute;left:364px;top:124px;width:232px;height:16px;z-index:17;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><a href="#" onclick="ShowObject('', 1);return false;">Укажите свое местонахождение</a></span></div>
+</form>
+</div>
+<table style="position:absolute;left:209px;top:697px;width:633px;height:257px;z-index:37;" cellpadding="0" cellspacing="1" id="Table1">
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:320px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> Магазин</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:110px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">Ед. изм.</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:102px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">Цена</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;"> Дата</span></div>
+</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">Сильпо, ул. Грязнова 4</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:110px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">200гр</span></div>
+</td>
+<td style="background-color:#FFA07A;border:1px #C0C0C0 solid;text-align:right;vertical-align:top;width:102px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">9,90</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">16.12.2012</span></div>
+</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">АТБ ул. Запорожская 23</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;width:110px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">200гр</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:right;vertical-align:top;width:102px;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">9,90</span></div>
+</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:center;vertical-align:top;height:18px;"><div><span style="color:#000000;font-family:Arial;font-size:13px;">16.12.2012</span></div>
+</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:320px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:110px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;width:102px;height:18px;">&nbsp;</td>
+<td style="background-color:transparent;border:1px #C0C0C0 solid;text-align:left;vertical-align:top;height:18px;">&nbsp;</td>
+</tr>
+</table>
+<div id="wb_Form3" style="position:absolute;left:212px;top:486px;width:626px;height:183px;z-index:38;">
+<form name="Form3" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form3">
+<div id="wb_Text11" style="position:absolute;left:293px;top:121px;width:154px;height:16px;z-index:18;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Сортировка</span></div>
+<select name="Combobox1" size="1" id="Combobox2" style="position:absolute;left:13px;top:153px;width:284px;height:20px;z-index:19;">
+</select>
+<select name="Combobox1" size="1" id="Combobox4" style="position:absolute;left:438px;top:154px;width:96px;height:20px;z-index:20;">
+<option selected value="MinToMax">От меньшей цены</option>
+<option value="MaxToMin">От большей цены</option>
+<option value="Reset">Отменить блокировку</option>
+</select>
+<select name="Combobox1" size="1" id="Combobox5" style="position:absolute;left:542px;top:155px;width:77px;height:20px;z-index:21;">
+<option value="FromToday">Дата по убыванию</option>
+<option value="Reset">Отменить сортировку по дате</option>
+</select>
+<div id="wb_Text12" style="position:absolute;left:13px;top:52px;width:174px;height:16px;z-index:22;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Добавить колонки</span></div>
+<div id="wb_Text13" style="position:absolute;left:39px;top:93px;width:85px;height:16px;z-index:23;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Цена за 1 кг</span></div>
+<input type="checkbox" id="Checkbox2" name="" value="on" style="position:absolute;left:11px;top:92px;z-index:24;">
+<div id="wb_Text15" style="position:absolute;left:8px;top:15px;width:495px;height:16px;z-index:25;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:13px;"><strong> Масло сливочное &quot;Селяночка&quot;</strong></span></div>
+</form>
+</div>
+</div>
+</body>
+</html>
