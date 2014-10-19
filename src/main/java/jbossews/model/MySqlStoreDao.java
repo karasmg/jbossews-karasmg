@@ -20,10 +20,10 @@ public class MySqlStoreDao implements StoreDao {
 
 	public void create(Store store) throws SQLException {
 		
-		String sql = "INSERT INTO ppool.Store (Name, Address, GPSpoint) VALUES ('+store.getName()+', '+store.getAddress()+', '+store.getGpsPoint()+');";
+		String sql = "INSERT INTO ppool.Store (Name, Address, GPSpoint) VALUES ('"+store.getName()+"', '"+store.getAddress()+"', '"+store.getGpsPoint()+"');";
 		Statement stm = connection.createStatement();
 		stm.executeUpdate(sql);
-		connection.commit();
+		
 		
 	}
 
