@@ -40,7 +40,6 @@ public class AddStore extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	@SuppressWarnings("null")
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
@@ -48,7 +47,6 @@ public class AddStore extends HttpServlet {
 		newstore.setName(request.getParameter("p1"));
 		newstore.setAddress(request.getParameter("p2"));
 		newstore.setGpsPoint(request.getParameter("p3"));
-		@SuppressWarnings("unused")
 		DaoFactory df = new MySqlDaoFactory();
 		StoreDao sd = null;
 		try {
@@ -59,6 +57,7 @@ public class AddStore extends HttpServlet {
 		}
 		try {
 			sd.create(newstore);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
