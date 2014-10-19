@@ -59,7 +59,7 @@ public class RequestHeader extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		String url = "jdbc:mysql://5434014fe0b8cde08b00017f-karasmg.rhcloud.com:45471/";
+		String url = "jdbc:mysql://5434014fe0b8cde08b00017f-karasmg.rhcloud.com:45471/ppool?useUnicode=true&characterEncoding=UTF-8";
 
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
