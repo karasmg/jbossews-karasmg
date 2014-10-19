@@ -43,6 +43,9 @@ public class AddStore extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+
+		PrintWriter out = response.getWriter();
+		
 		Store newstore = new Store();
 		newstore.setName(request.getParameter("p1"));
 		newstore.setAddress(request.getParameter("p2"));
@@ -59,7 +62,7 @@ public class AddStore extends HttpServlet {
 			sd.create(newstore);
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		

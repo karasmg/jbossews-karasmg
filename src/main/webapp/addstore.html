@@ -27,8 +27,8 @@ url = '/addstore';
 // Send the data using post
 var posting = $.post( url, { p1: nameStore, p2: addressStore, p3:gpsStore } );
 // Put the results in a div
-posting.done(function() {
-window.alert('Магазин успешно добавлен');
+posting.done(function(data) {
+window.alert(data);
 });
 }
 </script>
