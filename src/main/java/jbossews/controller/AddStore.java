@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import jbossews.model.DaoFactory;
 import jbossews.model.MySqlDaoFactory;
+import jbossews.model.MySqlStoreDao;
 import jbossews.model.MySqlUserDao;
 import jbossews.model.Store;
 import jbossews.model.StoreDao;
@@ -47,7 +48,15 @@ public class AddStore extends HttpServlet {
 		newstore.setName(request.getParameter("p1"));
 		newstore.setAddress(request.getParameter("p2"));
 		newstore.setGpsPoint(request.getParameter("p3"));
+		@SuppressWarnings("unused")
+		DaoFactory df = new MySqlDaoFactory();
 		StoreDao sd = null;
+		try {
+			sd = new MySqlStoreDao(df.getConnection());
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			sd.create(newstore);
 		} catch (SQLException e) {
