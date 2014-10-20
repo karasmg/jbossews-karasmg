@@ -42,7 +42,7 @@ public class AddStore extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
+		response.setContentType("text/html;charset=UTF-8");
 
 		PrintWriter out = response.getWriter();
 		
@@ -60,8 +60,8 @@ public class AddStore extends HttpServlet {
 		}
 		try {
 			sd.create(newstore);
-			//out.println("Магазин успешно добавлен");
-			out.format("ru-RU","Магазин успешно добавлен");  
+			out.println("Магазин успешно добавлен");
+			//out.format("ru-RU","Магазин успешно добавлен");  
 			
 		} catch (SQLException e) {
 			out.println(e.getMessage());
