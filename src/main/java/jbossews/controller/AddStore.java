@@ -60,6 +60,7 @@ public class AddStore extends HttpServlet {
 		}
 		try {
 			sd.create(newstore);
+			out.println("Магазин успешно добавлен");
 			
 		} catch (SQLException e) {
 			out.println(e.getMessage());
