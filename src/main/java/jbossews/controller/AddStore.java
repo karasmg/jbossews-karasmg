@@ -42,29 +42,34 @@ public class AddStore extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		//настраиваем выходной поток клиенту
 		response.setContentType("text/html;charset=UTF-8");
-
 		PrintWriter out = response.getWriter();
-		
+
+		//создаем объект магазин и заполняем его поля
 		Store newstore = new Store();
 		newstore.setName(request.getParameter("p1"));
 		newstore.setAddress(request.getParameter("p2"));
 		newstore.setGpsPoint(request.getParameter("p3"));
+		
+		//инициализируем соединение с БД
 		DaoFactory df = new MySqlDaoFactory();
 		StoreDao sd = null;
+		
+		//пытаемся получить коннекшин
 		try {
 			sd = new MySqlStoreDao(df.getConnection());
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		//пытаемся добавить данные в БД
 		try {
 			sd.create(newstore);
-			out.println("Магазин успешно добавлен");
-			//out.format("ru-RU","Магазин успешно добавлен");  
-			
+			out.println("Магазин успешно добавлен"); //отсылаем подтверждение клиенту
 		} catch (SQLException e) {
-			out.println(e.getMessage());
+			out.println(e.getMessage()); //отсылаем ошибку клиенту
 			e.printStackTrace();
 		}
 		
