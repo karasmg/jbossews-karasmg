@@ -2,7 +2,7 @@ package jbossews.model;
 
 import java.sql.*;
 import java.util.Properties;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.*;;
 
 public class MySqlDaoFactory implements DaoFactory {
 	 private String user = "adminsBzzT2D"; //Логин пользователя 
