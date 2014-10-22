@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import jbossews.model.DaoFactory;
 import jbossews.model.MySqlDaoFactory;
 import jbossews.model.MySqlStoreDao;
@@ -26,6 +28,7 @@ import jbossews.model.User;
  */
 @WebServlet("/addstore")
 public class AddStore extends HttpServlet {
+	private static final Logger log = Logger.getLogger(AddStore.class);
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -68,8 +71,12 @@ public class AddStore extends HttpServlet {
 		try {
 			sd.create(newstore);
 			out.println("Магазин успешно добавлен"); //отсылаем подтверждение клиенту
+				if (log.isDebugEnabled()) {
+			    log.debug("The Store wad added successfully");
+			    }
 		} catch (SQLException e) {
 			out.println(e.getMessage()); //отсылаем ошибку клиенту
+			log.error(e.getMessage());
 			e.printStackTrace();
 		}
 		
