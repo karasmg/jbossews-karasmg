@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import org.apache.log4j.Logger;
+import org.apache.log4j.*;
+
+
+
+
 
 import jbossews.model.DaoFactory;
 import jbossews.model.MySqlDaoFactory;
@@ -28,7 +32,7 @@ import jbossews.model.User;
  */
 @WebServlet("/addstore")
 public class AddStore extends HttpServlet {
-	//private static final Logger log = Logger.getLogger(AddStore.class);
+	private static final Logger log = Logger.getLogger(AddStore.class);
 	private static final long serialVersionUID = 1L;
 
 	/**
