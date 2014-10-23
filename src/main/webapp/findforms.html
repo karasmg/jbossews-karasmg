@@ -61,7 +61,8 @@ function readcookies(){
        var cookies = allcookies.split(';');
     var cookie = null;
     for(var i = 0; i < cookies.length; i++) {
-        if (cookies[i].substring(0, 4) == ( "uid=")) {
+        subcookie = cookies[i].substring(0, 4);
+        if(subcookie == ( "uid=")) {
             cookie = cookies[i].substring(5);
             break;
         }
