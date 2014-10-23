@@ -63,7 +63,7 @@ function readcookies(){
     for(var i = 0; i < cookies.length; i++) {
         subcookie = cookies[i].substring(1, 5);
         if(subcookie == ( "uid=")) {
-            cookie = cookies[i].substring(6);
+            cookie = cookies[i].substring(5);
             break;
         }
     }
