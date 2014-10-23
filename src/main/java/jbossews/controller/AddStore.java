@@ -15,10 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.*;
 
-
-
-
-
 import jbossews.model.DaoFactory;
 import jbossews.model.MySqlDaoFactory;
 import jbossews.model.MySqlStoreDao;
@@ -32,7 +28,7 @@ import jbossews.model.User;
  */
 @WebServlet("/addstore")
 public class AddStore extends HttpServlet {
-	private static final Logger log = Logger.getLogger(AddStore.class);
+	private static final Logger log = Logger.getRootLogger();
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -78,7 +74,13 @@ public class AddStore extends HttpServlet {
 				if (log.isDebugEnabled()) {
 			    log.debug("The Store was added successfully");
 			    }
-				log.error("Error esti");
+			
+				try {
+					log.error("Error esti");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		} catch (SQLException e) {
 			out.println(e.getMessage()); //отсылаем ошибку клиенту
 			log.error(e.getMessage());
