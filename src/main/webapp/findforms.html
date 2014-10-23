@@ -60,18 +60,13 @@ function readcookies(){
    if (allcookies == "") setcookies();
        var cookies = allcookies.split(';');
     var cookie = null;
-    name = 'ppool.ua';
     for(var i = 0; i < cookies.length; i++) {
-        if (cookies[i].substring(0, name.length+1) == (name + "=")) {
-            cookie = cookies[i];
+        if (cookies[i].substring(0, 4) == ( "uid=")) {
+            cookie = cookies[i].substring(5);
             break;
         }
     }
-    // Если cookie с требуемым именем не найден, вернуть управление
-    if (cookie == null) {setcookies(); return false;}
-    // Значение cookie находится вслед за знаком равенства
-    var cookieval = cookie.substring(name.length+1);
-    window.alert(cookieval);
+    window.alert(cookie);
 }
 </script>
 </head>
