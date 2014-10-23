@@ -28,7 +28,7 @@ import jbossews.model.User;
  */
 @WebServlet("/addstore")
 public class AddStore extends HttpServlet {
-	private static final Logger log = Logger.getLogger(AddStore.class);
+	static final Logger log = LogManager.getLogger(AddStore.class.getName());
 	private static final long serialVersionUID = 1L;
 
 	/**
