@@ -6,13 +6,13 @@ div#space
 {
    width: 1px;
    height: 50%;
-   margin-bottom: -543px;
+   margin-bottom: -150px;
    float:left
 }
 div#container
 {
-   width: 970px;
-   height: 1086px;
+   width: 700px;
+   height: 300px;
    margin: 0 auto;
    position: relative;
    clear: left;
@@ -25,57 +25,6 @@ body
    font-size: 13px;
    margin: 0;
    padding: 0;
-}
-#Image1
-{
-   border: 0px #000000 solid;
-}
-#wb_Text1 
-{
-   background-color: transparent;
-   border: 0px #000000 solid;
-   padding: 0;
-   text-align: left;
-}
-#wb_Text1 div
-{
-   text-align: left;
-}
-#AdvancedButton1
-{
-   border: 1px #FFFFFF solid;
-   background-color: transparent;
-}
-#AdvancedButton2
-{
-   border: 1px #FFFFFF solid;
-   background-color: transparent;
-}
-#AdvancedButton3
-{
-   border: 1px #FFFFFF solid;
-   background-color: transparent;
-}
-#AdvancedButton4
-{
-   border: 1px #FFFFFF solid;
-   background-color: transparent;
-}
-#wb_Text2 
-{
-   background-color: transparent;
-   border: 0px #000000 solid;
-   padding: 0;
-   text-align: left;
-}
-#wb_Text2 div
-{
-   text-align: left;
-}
-#AdvancedButton5
-{
-   border: 1px #FFFFFF solid;
-   background-color: transparent;
 }
 #wb_addStoreForm
 {
@@ -192,7 +141,9 @@ body
 }
 #wb_uid1
 {
-   text-align: left;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
 }
 #wb_uid2
 {
@@ -200,38 +151,11 @@ body
    font-family: Arial;
    font-size: 13px;
 }
-#basicdate
-{
-   color: #000000;
-   font-size: 12px;
-   font-family: Arial;
-   font-weight: bold;
-   font-style: normal;
-   text-decoration: none;
-}
-#wb_Text1
-{
-   position: absolute;
-   left: 0px;
-   top: 5px;
-   width: 70px;
-   height: 16px;
-   z-index: 9;
-   text-align: left;
-}
-#wb_Text2
-{
-   position: absolute;
-   left: 170px;
-   top: 2px;
-   width: 127px;
-   height: 19px;
-   z-index: 15;
-   text-align: left;
-}
 #wb_uid3
 {
-   text-align: left;
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
 }
 #wb_Text3
 {
@@ -243,21 +167,6 @@ body
    z-index: 0;
    text-align: left;
 }
-#wb_uid4
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
-#wb_Image1
-{
-   position: absolute;
-   left: 379px;
-   top: 0px;
-   width: 300px;
-   height: 65px;
-   z-index: 8;
-}
 #wb_Text4
 {
    position: absolute;
@@ -266,10 +175,6 @@ body
    width: 83px;
    height: 16px;
    z-index: 2;
-   text-align: left;
-}
-#wb_uid5
-{
    text-align: left;
 }
 #wb_Text5
@@ -282,12 +187,6 @@ body
    z-index: 3;
    text-align: left;
 }
-#wb_uid6
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
 #wb_Text6
 {
    position: absolute;
@@ -297,30 +196,6 @@ body
    height: 16px;
    z-index: 4;
    text-align: left;
-}
-#wb_uid7
-{
-   text-align: left;
-}
-#Html1
-{
-   position: absolute;
-   left: 61px;
-   top: 6px;
-   width: 120px;
-   height: 21px;
-   z-index: 10;
-}
-#wb_uid8
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
-#Image1
-{
-   width: 300px;
-   height: 65px;
 }
 #addStoreButton
 {
@@ -341,42 +216,14 @@ body
    line-height: 18px;
    z-index: 6;
 }
-#wb_uid10
-{
-   text-align: center;
-}
-#wb_uid9
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 16px;
-}
 #wb_addStoreForm
 {
    position: absolute;
-   left: 225px;
-   top: 102px;
+   left: 6px;
+   top: 5px;
    width: 625px;
    height: 257px;
-   z-index: 17;
-}
-#wb_uid11
-{
-   color: #0000FF;
-   font-family: Arial;
-   font-size: 16px;
-}
-#wb_uid12
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
-#wb_uid13
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
+   z-index: 9;
 }
 #nameStore
 {
@@ -387,63 +234,6 @@ body
    height: 18px;
    line-height: 18px;
    z-index: 1;
-}
-#wb_uid14
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
-#AdvancedButton1
-{
-   position: absolute;
-   left: 759px;
-   top: 6px;
-   width: 60px;
-   height: 24px;
-   z-index: 11;
-}
-#wb_uid15
-{
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
-}
-#AdvancedButton2
-{
-   position: absolute;
-   left: 677px;
-   top: 6px;
-   width: 92px;
-   height: 24px;
-   z-index: 12;
-}
-#AdvancedButton3
-{
-   position: absolute;
-   left: 825px;
-   top: 6px;
-   width: 67px;
-   height: 24px;
-   z-index: 13;
-}
-#AdvancedButton4
-{
-   position: absolute;
-   left: 877px;
-   top: 6px;
-   width: 103px;
-   height: 24px;
-   z-index: 14;
-}
-#AdvancedButton5
-{
-   position: absolute;
-   left: 283px;
-   top: 0px;
-   width: 96px;
-   height: 24px;
-   z-index: 16;
 }
 #wb_uid0
 {

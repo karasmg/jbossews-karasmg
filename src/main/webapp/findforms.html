@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Поиск лучшей цены</title>
+<link href="cupertino/jquery.ui.all.css" rel="stylesheet" type="text/css">
+<link href="ppool.css" rel="stylesheet" type="text/css">
+<link href="findforms.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="jquery.ui.position.min.js"></script>
+<script type="text/javascript" src="jquery.ui.menu.min.js"></script>
+<script type="text/javascript" src="jquery.ui.autocomplete.min.js"></script>
+<script type="text/javascript" src="jquery.ui.button.min.js"></script>
+<script type="text/javascript" src="wwb9.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+   var AutoComplete2Data = ["шоколад милка молочный с целыми орехами/", "Мешочек сильпо средний", "вода аквалайф 6л негазованная", "туалетная бумага зеленая премия", "памела китайская", "жвачка orbit wight драже", "носки мужские размер 25 теркур", "коньяк сараджиш арагви 05л", "сок 1литр сицилийский красный апельсин сандора", "скитлз дикая ягода 38драже", "скитлз кислый 38драже", "киви корзинка", "журнал добрые советы", "мешочек сильпо маленький", "памела китай", "рулетики с маком хочу ще 500г", "ананас oscar кусочки 580", "маслины 370 чорные без косточек премия", "хурма шарон", "куриное филе", "туалетная бумага диво серая", "млинці з сиром полуницею пекарь", "млинці з мясом пекарь", "валюта евро", "клин универсал запас", "кальсони мужские дюна"];
+   var AutoComplete2Opts =
+   {
+      source: AutoComplete2Data,
+      delay: 0,
+      minLength: 3
+   };
+   $("#AutoComplete2").autocomplete(AutoComplete2Opts);
+   $("#jQueryButton1").button();
+});
+</script>
+<script>
+function showalert(){window.alert('Привет всем!');}
+function addStore(){
+nameStore=$( '#nameStore' ).val();
+addressStore = $('#addressStore').val();
+gpsStore = $( '#gpsStore' ).val();
+url = '/addstore';
+// Send the data using post
+var posting = $.post( url, { p1: nameStore, p2: addressStore, p3:gpsStore } );
+// Put the results in a div
+posting.done(function(data) {
+window.alert(data);
+});
+}
+function setcookies(){
+document.cookie = 'name=ppool'
+document.cookie = 'domain=ppool.ua';
+document.cookie = 'path=/';
+document.cookie = 'max-age='+(60*60*24*365);
+document.cookie = 'secure=false';
+document.cookie = 'version=' + encodeURIComponent(document.lastModified);
+document.cookie = 'uid=' + getnewid();
+}
+function getnewid(){
+return Math.round(Math.random()*100000);
+}
+function readcookies(){
+   var allcookies = document.cookie;
+   if (allcookies == "") setcookies();
+       var cookies = allcookies.split(';');
+    var cookie = null;
+    name = 'ppool.ua';
+    for(var i = 0; i < cookies.length; i++) {
+        if (cookies[i].substring(0, name.length+1) == (name + "=")) {
+            cookie = cookies[i];
+            break;
+        }
+    }
+    // Если cookie с требуемым именем не найден, вернуть управление
+    if (cookie == null) {setcookies(); return false;}
+    // Значение cookie находится вслед за знаком равенства
+    var cookieval = cookie.substring(name.length+1);
+    window.alert(cookieval);
+}
+</script>
+</head>
+<body onload="readcookies();return false;">
+   <div id="space"><br></div>
+   <div id="container">
+      <div id="wb_Form1">
+         <form name="Form1" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form1">
+            <input type="submit" id="Button2" onclick="ShowObject('wb_Form2', 1);ShowObject('Combobox1', 0);ShowObject('wb_Text14', 0);ShowObject('wb_Text9', 0);return false;" name="Find" value="Найти">
+            <input type="submit" id="Button3" onclick="showalert();return false;" name="Remember" value="Запомнить">
+            <div id="wb_Text3">
+               <span id="wb_uid0"><strong>Введите наименование товара</strong></span></div>
+            <input type="text" id="AutoComplete2" name="AutoComplete1" value="">
+         </form>
+      </div>
+      <div id="wb_Image1">
+         <img src="images/wwb_img3.jpg" id="Image1" alt="">
+      </div>
+      <div id="wb_Text1">
+         <span id="wb_uid1"><strong>Сегодня:</strong></span>
+      </div>
+<!-- Date -->
+      <div id="Html1">
+         <div id="basicdate"></div>
+<script type="text/javascript">
+   var now = new Date();
+   var months = new Array('01','02','03','04','05','06','07','08','09','10','11','12');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+   today = date + "." + months[now.getMonth()] + "." + year;
+   var basicdate = document.getElementById('basicdate');
+   basicdate.innerHTML = today;
+</script></div>
+      <button id="AdvancedButton1" type="button" name="" value="">
+         <div id="wb_uid2"><span id="wb_uid3"><u>Справка</u></span></div>
+      </button>
+      <button id="AdvancedButton2" type="button" name="" value="">
+         <div id="wb_uid4"><span id="wb_uid5"><u>Настройки</u></span></div>
+      </button>
+      <button id="AdvancedButton3" type="button" name="" value="">
+         <div id="wb_uid6"><span id="wb_uid7"><u>Выйти</u></span></div>
+      </button>
+      <button id="AdvancedButton4" type="button" name="" value="">
+         <div id="wb_uid8"><span id="wb_uid9"><u>Сменить язык</u></span></div>
+      </button>
+      <div id="wb_Text2">
+         <span id="wb_uid10"><strong>Пользователь:</strong></span>
+      </div>
+      <button id="AdvancedButton5" type="button" name="User" value="Вход">
+         <div id="wb_uid11"><span id="wb_uid12"><b><u>Idealist &gt;&gt;</u></b></span></div>
+      </button>
+      <div id="wb_Form2" class="hidden">
+         <form name="Form2" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="Form2">
+            <div id="wb_Text4">
+               <span id="wb_uid13"><strong>Где ищем?</strong></span></div>
+            <input type="radio" id="RadioButton1" onclick="ShowObject('wb_Text9', 1);return false;" name="RadioButton1" value="off">
+            <input type="radio" id="RadioButton2" onclick="ShowObject('Combobox1', 1);return false;" name="RadioButton2" value="on">
+            <input type="radio" id="RadioButton3" onclick="ShowObject('wb_Text14', 1);return false;" name="RadioButton3" value="on">
+            <div id="wb_Text5">
+               <span id="wb_uid14">Все Запорожье</span></div>
+            <div id="wb_Text6">
+               <span id="wb_uid15">Выбрать район</span></div>
+            <div id="wb_Text7">
+               <span id="wb_uid16">Магазины в радиусе</span></div>
+            <div id="wb_Text8">
+               <span id="wb_uid17"><a href="#" onclick="ShowObject('', 1);return false;">1 км</a></span></div>
+            <select name="Combobox1" size="1" id="Combobox1">
+            </select>
+            <div id="wb_Text9">
+               <span id="wb_uid18"><a href="#" onclick="ShowObject('', 1);return false;">Изменить город</a></span></div>
+            <input type="checkbox" id="Checkbox1" name="Checkbox1" value="on">
+            <div id="wb_Text10">
+               <span id="wb_uid19">Запомнить параметры поиска</span></div>
+            <div id="wb_Text14">
+               <span id="wb_uid20"><a href="#" onclick="ShowObject('', 1);return false;">Укажите свое местонахождение</a></span></div>
+            <input type="button" id="jQueryButton1" onclick="location.assign('findtable.html');return false;" name="find" value="Найти">
+         </form>
+      </div>
+   </div>
+</body>
+</html>
