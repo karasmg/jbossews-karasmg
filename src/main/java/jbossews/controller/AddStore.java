@@ -76,7 +76,7 @@ public class AddStore extends HttpServlet {
 			sd.create(newstore);
 			out.println("Магазин успешно добавлен"); //отсылаем подтверждение клиенту
 				if (log.isDebugEnabled()) {
-			    log.debug("The Store wad added successfully");
+			    log.debug("The Store was added successfully");
 			    }
 		} catch (SQLException e) {
 			out.println(e.getMessage()); //отсылаем ошибку клиенту
