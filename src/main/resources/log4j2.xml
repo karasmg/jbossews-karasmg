@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="trace">
+	<Properties>
+		<Property name="filename">test.log</Property>
+	</Properties>
   <Appenders>
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
     </Console>
-   <appender name="ppool" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="logs/ppool.log"/>
-        <param name="MaxFileSize" value="100MB"/>
-        <param name="MaxBackupIndex" value="10"/>
-        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
-        <param name="Encoding" value="UTF-8"/>
-        <layout class="org.apache.log4j.EnhancedPatternLayout">
-            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
-        </layout>
+   <appender name="ppool" type="File" fileName="${filename}">
+ 		<Layout type="PatternLayout">
+			<Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+		</Layout>
     </appender>
      </Appenders>
   <Loggers>
-    <Logger name="ppool" level="error">
+    <Logger name="prosto" level="error">
     	 <AppenderRef ref="ppool"/>
     </Logger>
     <Root level="error">
