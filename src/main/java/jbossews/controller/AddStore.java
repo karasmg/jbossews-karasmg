@@ -77,6 +77,7 @@ public class AddStore extends HttpServlet {
 			out.println("Магазин успешно добавлен"); //отсылаем подтверждение клиенту
 				if (log.isDebugEnabled()) {
 			    log.debug("The Store was added successfully");
+			    log.error("Error esti");
 			    }
 		} catch (SQLException e) {
 			out.println(e.getMessage()); //отсылаем ошибку клиенту
