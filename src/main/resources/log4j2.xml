@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="trace">
+<Configuration status="debug">
 	<Properties>
 		<Property name="filename">test.log</Property>
 	</Properties>
@@ -14,11 +14,11 @@
     </appender>
      </Appenders>
   <Loggers>
-    <Logger name="prosto" level="error">
+    <Logger name="prosto" level="info">
     	 <AppenderRef ref="ppool"/>
     </Logger>
     <Root level="error">
-      <AppenderRef ref="ppool"/>
+      <AppenderRef ref="Console"/>
     </Root>
   </Loggers>
 </Configuration>
