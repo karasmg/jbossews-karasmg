@@ -49,6 +49,7 @@ public class AddStore extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
+		
 		//создаем объект магазин и заполняем его поля
 		Store newstore = new Store();
 		newstore.setName(request.getParameter("p1"));
