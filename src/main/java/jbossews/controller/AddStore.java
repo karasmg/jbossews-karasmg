@@ -117,6 +117,7 @@ public class AddStore extends HttpServlet {
 			e2.printStackTrace();
 		}
 
+		
 		Connection cn = null;
 
 		try {
