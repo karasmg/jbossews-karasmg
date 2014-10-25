@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Поиск лучшей цены</title>
+<link href="cupertino/jquery.ui.all.css" rel="stylesheet">
+<link href="ppool.css" rel="stylesheet">
+<link href="geolocation.css" rel="stylesheet">
+<script src="jquery-1.9.1.min.js"></script>
+<script src="jquery.ui.core.min.js"></script>
+<script src="jquery.ui.widget.min.js"></script>
+<script src="jquery.ui.button.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#jQueryButton1").button();
+});
+</script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD1zmghAKZgcSUJ3noXWVwoHl-jynLU05A&sensor=true">
+</script>
+<script>
+$(document).ready(function (){
+  /*
+  var myLatLng = new google.maps.LatLng(-25.363882, 131.044922);
+  var mapOptions = {
+    zoom: 4,
+    center: myLatLng
+  };
+  var map = new google.maps.Map(document.getElementById('map_canvas'),
+      mapOptions);
+	  */
+function initialize() {
+        var mapOptions = {
+          zoom: 14,
+         };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    
+      map.setCenter(pos);
+	  console.log(""+map.getCenter());
+var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    draggable: true,
+	title: 'Перетяни'
+  });
+  function markerMove(){
+marker.setTitle(""+marker.getPosition());
+console.log(""+map.getCenter());
+}
+google.maps.event.addListener(marker, 'dragend', markerMove);	  
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+}
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    console.log('error geolocation');
+  } else {
+    console.log('error brouser geolocation');
+  }
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60, 105),
+  };
+  map.setCenter(options.position);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);            
+});
+</script>
+</head>
+<body>
+   <div id="space"><br></div>
+   <div id="container">
+      <div id="wb_Image1">
+         <img src="images/wwb_img3.jpg" id="Image1" alt="">
+      </div>
+      <div id="wb_Text1">
+         <span id="wb_uid0"><strong>Сегодня:</strong></span>
+      </div>
+<!-- Date -->
+      <div id="Html1">
+         <div id="basicdate"></div>
+<script>
+   var now = new Date();
+   var months = new Array('01','02','03','04','05','06','07','08','09','10','11','12');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+   today = date + "." + months[now.getMonth()] + "." + year;
+   var basicdate = document.getElementById('basicdate');
+   basicdate.innerHTML = today;
+</script></div>
+      <button id="AdvancedButton1" type="button" name="" value="">
+         <div id="wb_uid1"><span id="wb_uid2"><u>Справка</u></span></div>
+      </button>
+      <button id="AdvancedButton2" type="button" name="" value="">
+         <div id="wb_uid3"><span id="wb_uid4"><u>Настройки</u></span></div>
+      </button>
+      <button id="AdvancedButton3" type="button" name="" value="">
+         <div id="wb_uid5"><span id="wb_uid6"><u>Выйти</u></span></div>
+      </button>
+      <button id="AdvancedButton4" type="button" name="" value="">
+         <div id="wb_uid7"><span id="wb_uid8"><u>Сменить язык</u></span></div>
+      </button>
+      <div id="wb_Text2">
+         <span id="wb_uid9"><strong>Пользователь:</strong></span>
+      </div>
+      <button id="AdvancedButton5" type="button" name="User" value="Вход">
+         <div id="wb_uid10"><span id="wb_uid11"><b><u>Idealist &gt;&gt;</u></b></span></div>
+      </button>
+      <div id="map_canvas" title="" style="width:500px; height:500px">
+      </div>
+      <div id="wb_Text3">
+         <span id="wb_uid12">Выбор местоположения</span>
+      </div>
+      <div id="Layer2" title="">
+      </div>
+      <input type="button" id="jQueryButton1" name="" value="Button">
+   </div>
+</body>
+</html>

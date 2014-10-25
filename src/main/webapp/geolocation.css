@@ -1,0 +1,327 @@
+html, body
+{
+   height: 100%;
+}
+div#space
+{
+   width: 1px;
+   height: 50%;
+   margin-bottom: -543px;
+   float:left
+}
+div#container
+{
+   width: 970px;
+   height: 1086px;
+   margin: 0 auto;
+   position: relative;
+   clear: left;
+}
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-size: 8px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#Image1
+{
+   border: 0px #000000 solid;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#AdvancedButton1
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton2
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton3
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton4
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text2 div
+{
+   text-align: left;
+}
+#AdvancedButton5
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#map_canvas
+{
+   background-color: #FAFAFA;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text3 div
+{
+   text-align: left;
+}
+#Layer2
+{
+   background-color: #FAFAFA;
+}
+#jQueryButton1
+{
+   font-family: Arial;
+   font-size: 13px;
+   font-weight: normal;
+   font-style: normal;
+}
+#jQueryButton1 .ui-button
+{
+   position: absolute;
+}
+#jQueryButton1 .ui-button-text-icon .ui-button-icon-primary,
+#jQueryButton1 .ui-button-text-icons .ui-button-icon-primary,
+#jQueryButton1 .ui-button-icons-only .ui-button-icon-primary
+{
+   left: auto;
+   right: 10px;
+}
+#jQueryButton1 .ui-button-text-icons .ui-button-icon-secondary,
+#jQueryButton1 .ui-button-icons-only .ui-button-icon-secondary
+{
+   right: auto;
+   left: 10px;
+}
+#wb_uid1
+{
+   text-align: left;
+}
+#wb_uid2
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#basicdate
+{
+   color: #000000;
+   font-size: 12px;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+}
+#wb_Text1
+{
+   position: absolute;
+   left: 0px;
+   top: 5px;
+   width: 70px;
+   height: 16px;
+   z-index: 1;
+   text-align: left;
+}
+#wb_Text2
+{
+   position: absolute;
+   left: 170px;
+   top: 2px;
+   width: 127px;
+   height: 19px;
+   z-index: 7;
+   text-align: left;
+}
+#wb_uid3
+{
+   text-align: left;
+}
+#wb_Text3
+{
+   position: absolute;
+   left: 17px;
+   top: 71px;
+   width: 187px;
+   height: 16px;
+   z-index: 10;
+   text-align: left;
+}
+#wb_uid4
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Image1
+{
+   position: absolute;
+   left: 379px;
+   top: 0px;
+   width: 300px;
+   height: 65px;
+   z-index: 0;
+}
+#wb_uid5
+{
+   text-align: left;
+}
+#Layer2
+{
+   position: absolute;
+   text-align: left;
+   left: 527px;
+   top: 97px;
+   width: 500px;
+   height: 500px;
+   z-index: 11;
+}
+#wb_uid6
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_uid7
+{
+   text-align: left;
+}
+#Html1
+{
+   position: absolute;
+   left: 61px;
+   top: 6px;
+   width: 120px;
+   height: 21px;
+   z-index: 2;
+}
+#wb_uid8
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Image1
+{
+   width: 300px;
+   height: 65px;
+}
+#wb_uid10
+{
+   text-align: center;
+}
+#wb_uid9
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 16px;
+}
+#wb_uid11
+{
+   color: #0000FF;
+   font-family: Arial;
+   font-size: 16px;
+}
+#wb_uid12
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#map_canvas
+{
+   position: absolute;
+   text-align: left;
+   left: 18px;
+   top: 98px;
+   width: 500px;
+   height: 500px;
+   z-index: 9;
+}
+#AdvancedButton1
+{
+   position: absolute;
+   left: 759px;
+   top: 6px;
+   width: 60px;
+   height: 24px;
+   z-index: 3;
+}
+#AdvancedButton2
+{
+   position: absolute;
+   left: 677px;
+   top: 6px;
+   width: 92px;
+   height: 24px;
+   z-index: 4;
+}
+#jQueryButton1
+{
+   position: absolute;
+   left: 29px;
+   top: 623px;
+   width: 98px;
+   height: 26px;
+   z-index: 13;
+}
+#AdvancedButton3
+{
+   position: absolute;
+   left: 825px;
+   top: 6px;
+   width: 67px;
+   height: 24px;
+   z-index: 5;
+}
+#AdvancedButton4
+{
+   position: absolute;
+   left: 877px;
+   top: 6px;
+   width: 103px;
+   height: 24px;
+   z-index: 6;
+}
+#AdvancedButton5
+{
+   position: absolute;
+   left: 283px;
+   top: 0px;
+   width: 96px;
+   height: 24px;
+   z-index: 8;
+}
+#wb_uid0
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
