@@ -29,19 +29,31 @@ $(document).ready(function (){
   var map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
 	  */
+	  
 function initialize() {
+//действия, если геолокация доступна	
+function geo_success(position){
         var mapOptions = {
           zoom: 14,
          };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-//действия, если геолокация доступна	
-		
-function geo_success(position){
       var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(pos);
 	  console.log(""+map.getCenter());
-	  setMarker();
+	  var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    draggable: true,
+	title: 'Перетяни'
+  });
+//действия после перетягивания маркера  
+  function markerMove(){
+	marker.setTitle(""+marker.getPosition());
+	console.log(""+map.getCenter());
+  }  
+//листенер перетягивания маркера
+	google.maps.event.addListener(marker, 'dragend', markerMove);	
 	  }
 //устанавливаем маркер по центру
 function geo_error(error) {
@@ -73,21 +85,6 @@ var geo_options = {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
-  function setMarker(){
-var marker = new google.maps.Marker({
-    position: map.getCenter(),
-    map: map,
-    draggable: true,
-	title: 'Перетяни'
-  });
-//действия после перетягивания маркера  
-  function markerMove(){
-	marker.setTitle(""+marker.getPosition());
-	console.log(""+map.getCenter());
-  }  
-//листенер перетягивания маркера
-	google.maps.event.addListener(marker, 'dragend', markerMove);	
-	}
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
     console.log('error geolocation');
@@ -101,7 +98,19 @@ var myLatLng = new google.maps.LatLng(49.363882, 31.044922);
   };
   map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
-	  setMarker();
+var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    draggable: true,
+	title: 'Перетяни'
+  });
+//действия после перетягивания маркера  
+  function markerMove(){
+	marker.setTitle(""+marker.getPosition());
+	console.log(""+map.getCenter());
+  }  
+//листенер перетягивания маркера
+	google.maps.event.addListener(marker, 'dragend', markerMove);	
 }
 }
 
