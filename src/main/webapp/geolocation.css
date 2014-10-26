@@ -196,11 +196,46 @@ body
    right: auto;
    left: 10px;
 }
+#wb_Text8 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text8 div
+{
+   text-align: left;
+}
+#cancelButton
+{
+   font-family: Arial;
+   font-size: 13px;
+   font-weight: normal;
+   font-style: normal;
+}
+#cancelButton .ui-button
+{
+   position: absolute;
+}
+#cancelButton .ui-button-text-icon .ui-button-icon-primary,
+#cancelButton .ui-button-text-icons .ui-button-icon-primary,
+#cancelButton .ui-button-icons-only .ui-button-icon-primary
+{
+   left: auto;
+   right: 10px;
+}
+#cancelButton .ui-button-text-icons .ui-button-icon-secondary,
+#cancelButton .ui-button-icons-only .ui-button-icon-secondary
+{
+   right: auto;
+   left: 10px;
+}
 #addressStore
 {
    position: absolute;
    left: 194px;
-   top: 110px;
+   top: 156px;
    width: 306px;
    height: 18px;
    line-height: 18px;
@@ -232,7 +267,7 @@ body
    top: 5px;
    width: 70px;
    height: 16px;
-   z-index: 10;
+   z-index: 12;
    text-align: left;
 }
 #Shape1
@@ -241,6 +276,15 @@ body
    width: 1054px;
    height: 550px;
 }
+#cancelButton
+{
+   position: absolute;
+   left: 200px;
+   top: 258px;
+   width: 127px;
+   height: 24px;
+   z-index: 9;
+}
 #wb_Text2
 {
    position: absolute;
@@ -248,7 +292,7 @@ body
    top: 2px;
    width: 127px;
    height: 19px;
-   z-index: 16;
+   z-index: 18;
    text-align: left;
 }
 #wb_uid3
@@ -262,7 +306,7 @@ body
    top: 71px;
    width: 187px;
    height: 16px;
-   z-index: 19;
+   z-index: 21;
    text-align: left;
 }
 #wb_uid4
@@ -278,7 +322,7 @@ body
    top: 0px;
    width: 300px;
    height: 65px;
-   z-index: 9;
+   z-index: 11;
 }
 #wb_Text4
 {
@@ -298,7 +342,7 @@ body
 {
    position: absolute;
    left: 27px;
-   top: 66px;
+   top: 112px;
    width: 83px;
    height: 16px;
    z-index: 2;
@@ -314,7 +358,7 @@ body
 {
    position: absolute;
    left: 27px;
-   top: 112px;
+   top: 158px;
    width: 178px;
    height: 16px;
    z-index: 3;
@@ -331,13 +375,13 @@ body
    top: 6px;
    width: 120px;
    height: 21px;
-   z-index: 11;
+   z-index: 13;
 }
 #wb_Text7
 {
    position: absolute;
    left: 27px;
-   top: 161px;
+   top: 207px;
    width: 178px;
    height: 16px;
    z-index: 4;
@@ -354,11 +398,21 @@ body
    width: 300px;
    height: 65px;
 }
+#wb_Text8
+{
+   position: absolute;
+   left: 14px;
+   top: 42px;
+   width: 483px;
+   height: 32px;
+   z-index: 8;
+   text-align: left;
+}
 #gpsStore
 {
    position: absolute;
    left: 194px;
-   top: 155px;
+   top: 201px;
    width: 305px;
    height: 18px;
    line-height: 18px;
@@ -368,7 +422,7 @@ body
 {
    position: absolute;
    left: 370px;
-   top: 213px;
+   top: 259px;
    width: 127px;
    height: 24px;
    z-index: 6;
@@ -389,8 +443,8 @@ body
    left: 527px;
    top: 97px;
    width: 523px;
-   height: 500px;
-   z-index: 21;
+   height: 302px;
+   z-index: 23;
 }
 #wb_uid11
 {
@@ -412,13 +466,13 @@ body
    top: 98px;
    width: 500px;
    height: 500px;
-   z-index: 18;
+   z-index: 20;
 }
 #nameStore
 {
    position: absolute;
    left: 194px;
-   top: 64px;
+   top: 110px;
    width: 307px;
    height: 18px;
    line-height: 18px;
@@ -443,7 +497,7 @@ body
    top: 6px;
    width: 60px;
    height: 24px;
-   z-index: 12;
+   z-index: 14;
 }
 #wb_uid15
 {
@@ -458,7 +512,7 @@ body
    top: 6px;
    width: 92px;
    height: 24px;
-   z-index: 13;
+   z-index: 15;
 }
 #wb_uid16
 {
@@ -473,7 +527,7 @@ body
    top: 6px;
    width: 67px;
    height: 24px;
-   z-index: 14;
+   z-index: 16;
 }
 #wb_Shape1
 {
@@ -482,7 +536,13 @@ body
    top: 65px;
    width: 1054px;
    height: 550px;
-   z-index: 8;
+   z-index: 10;
+}
+#wb_uid17
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
 }
 #AdvancedButton4
 {
@@ -491,7 +551,7 @@ body
    top: 6px;
    width: 103px;
    height: 24px;
-   z-index: 15;
+   z-index: 17;
 }
 #AdvancedButton5
 {
@@ -500,7 +560,7 @@ body
    top: 0px;
    width: 96px;
    height: 24px;
-   z-index: 17;
+   z-index: 19;
 }
 #wb_uid0
 {
