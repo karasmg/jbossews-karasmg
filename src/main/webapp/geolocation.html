@@ -20,16 +20,17 @@ $(document).ready(function()
 </script>
 <script>
 function addStore(){
-nameStore=$( '#nameStore' ).val();
-addressStore = $('#addressStore').val();
-gpsStore = $( '#gpsStore' ).val();
-url = '/addstore';
-// Send the data using post
-var posting = $.post( url, { p1: nameStore, p2: addressStore, p3:gpsStore } );
-// Put the results in a div
-posting.done(function(data) {
-window.alert(data);
-});
+	nameStore=$( '#nameStore' ).val();
+	addressStore = $('#addressStore').val();
+	gpsStore = $( '#gpsStore' ).val();
+	url = '/addstore';
+	// Send the data using post
+	var posting = $.post( url, { p1: nameStore, p2: addressStore, p3:gpsStore } );
+	// Put the results in a div
+	posting.done(function(data) {
+		window.alert(data);
+		google.maps.event.addDomListener(window, 'load', initialize);  
+	});
 }
 $(document).ready(function (){
 function initialize() {
