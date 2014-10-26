@@ -210,12 +210,6 @@ body
 {
    text-align: left;
 }
-#Shape1
-{
-   border-width: 0;
-   width: 1054px;
-   height: 550px;
-}
 #wb_uid2
 {
    color: #000000;
@@ -238,8 +232,14 @@ body
    top: 5px;
    width: 70px;
    height: 16px;
-   z-index: 9;
+   z-index: 10;
    text-align: left;
+}
+#Shape1
+{
+   border-width: 0;
+   width: 1054px;
+   height: 550px;
 }
 #wb_Text2
 {
@@ -248,7 +248,7 @@ body
    top: 2px;
    width: 127px;
    height: 19px;
-   z-index: 15;
+   z-index: 16;
    text-align: left;
 }
 #wb_uid3
@@ -262,7 +262,7 @@ body
    top: 71px;
    width: 187px;
    height: 16px;
-   z-index: 18;
+   z-index: 19;
    text-align: left;
 }
 #wb_uid4
@@ -278,7 +278,7 @@ body
    top: 0px;
    width: 300px;
    height: 65px;
-   z-index: 8;
+   z-index: 9;
 }
 #wb_Text4
 {
@@ -331,7 +331,7 @@ body
    top: 6px;
    width: 120px;
    height: 21px;
-   z-index: 10;
+   z-index: 11;
 }
 #wb_Text7
 {
@@ -390,7 +390,7 @@ body
    top: 97px;
    width: 523px;
    height: 500px;
-   z-index: 20;
+   z-index: 21;
 }
 #wb_uid11
 {
@@ -412,7 +412,7 @@ body
    top: 98px;
    width: 500px;
    height: 500px;
-   z-index: 17;
+   z-index: 18;
 }
 #nameStore
 {
@@ -443,7 +443,7 @@ body
    top: 6px;
    width: 60px;
    height: 24px;
-   z-index: 11;
+   z-index: 12;
 }
 #wb_uid15
 {
@@ -458,16 +458,7 @@ body
    top: 6px;
    width: 92px;
    height: 24px;
-   z-index: 12;
-}
-#wb_Shape1
-{
-   position: absolute;
-   left: 8px;
-   top: 65px;
-   width: 1054px;
-   height: 550px;
-   z-index: 21;
+   z-index: 13;
 }
 #wb_uid16
 {
@@ -482,7 +473,16 @@ body
    top: 6px;
    width: 67px;
    height: 24px;
-   z-index: 13;
+   z-index: 14;
+}
+#wb_Shape1
+{
+   position: absolute;
+   left: 8px;
+   top: 65px;
+   width: 1054px;
+   height: 550px;
+   z-index: 8;
 }
 #AdvancedButton4
 {
@@ -491,7 +491,7 @@ body
    top: 6px;
    width: 103px;
    height: 24px;
-   z-index: 14;
+   z-index: 15;
 }
 #AdvancedButton5
 {
@@ -500,7 +500,7 @@ body
    top: 0px;
    width: 96px;
    height: 24px;
-   z-index: 16;
+   z-index: 17;
 }
 #wb_uid0
 {
