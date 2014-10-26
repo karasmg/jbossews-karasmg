@@ -16,7 +16,7 @@ $(document).ready(function()
    $("#jQueryButton1").button();
 });
 </script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD1zmghAKZgcSUJ3noXWVwoHl-jynLU05A&sensor=true">
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true">
 </script>
 <script>
 $(document).ready(function (){
@@ -35,43 +35,74 @@ function initialize() {
          };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-  // Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+//действия, если геолокация доступна	
+		
+function geo_success(position){
       var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    
       map.setCenter(pos);
 	  console.log(""+map.getCenter());
+	  setMarker();
+	  }
+//устанавливаем маркер по центру
+function geo_error(error) {
+     
+switch(error.code) {
+            case error.PERMISSION_DENIED:
+			handleNoGeolocation(true);
+                break;
+            case error.POSITION_UNAVAILABLE:
+			handleNoGeolocation(true);
+                break;
+            case error.TIMEOUT:
+			handleNoGeolocation(true);
+                break;
+            case error.UNKNOWN_ERROR:
+			handleNoGeolocation(true);
+                break;
+        }
+	}
+var geo_options = {
+  enableHighAccuracy: true, 
+  maximumAge        : 3000, 
+  timeout           : 7000
+};
+  // Try HTML5 geolocation
+   if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(geo_success, geo_error, geo_options);
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+  function setMarker(){
 var marker = new google.maps.Marker({
     position: map.getCenter(),
     map: map,
     draggable: true,
 	title: 'Перетяни'
   });
+//действия после перетягивания маркера  
   function markerMove(){
-marker.setTitle(""+marker.getPosition());
-console.log(""+map.getCenter());
-}
-google.maps.event.addListener(marker, 'dragend', markerMove);	  
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
-}
+	marker.setTitle(""+marker.getPosition());
+	console.log(""+map.getCenter());
+  }  
+//листенер перетягивания маркера
+	google.maps.event.addListener(marker, 'dragend', markerMove);	
+	}
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
     console.log('error geolocation');
   } else {
     console.log('error brouser geolocation');
   }
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
+var myLatLng = new google.maps.LatLng(49.363882, 31.044922);
+  var mapOptions = {
+    zoom: 4,
+    center: myLatLng
   };
-  map.setCenter(options.position);
+  map = new google.maps.Map(document.getElementById('map_canvas'),
+      mapOptions);
+	  setMarker();
+}
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);            
