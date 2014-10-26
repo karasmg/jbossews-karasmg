@@ -20,7 +20,6 @@ $(document).ready(function()
 </script>
 <script>
 $(document).ready(function (){
-function initialize() {
 	function addStore(){
 		nameStore=$( '#nameStore' ).val();
 		addressStore = $('#addressStore').val();
@@ -33,6 +32,7 @@ function initialize() {
 			window.alert(data);
 		});
 	}
+function initialize() {
 		//действия, если геолокация доступна	
 		function geo_success(position){
 			var mapOptions = {
