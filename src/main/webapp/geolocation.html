@@ -19,7 +19,6 @@ $(document).ready(function()
 <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true">
 </script>
 <script>
-$(document).ready(function (){
 	function addStore(){
 		nameStore=$( '#nameStore' ).val();
 		addressStore = $('#addressStore').val();
@@ -32,6 +31,7 @@ $(document).ready(function (){
 			window.alert(data);
 		});
 	}
+$(document).ready(function (){
 function initialize() {
 		//действия, если геолокация доступна	
 		function geo_success(position){
@@ -178,6 +178,9 @@ function initialize() {
             <input type="button" id="addStoreButton" onclick="addStore();return false;" name="" value="Добавить магазин">
             <input type="text" id="gpsStore" name="Editbox1" value="">
          </form>
+      </div>
+      <div id="wb_Shape1">
+         <img src="images/img0004.png" id="Shape1" alt="">
       </div>
    </div>
 </body>
