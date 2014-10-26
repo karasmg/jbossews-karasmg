@@ -6,13 +6,13 @@ div#space
 {
    width: 1px;
    height: 50%;
-   margin-bottom: -150px;
+   margin-bottom: -543px;
    float:left
 }
 div#container
 {
-   width: 700px;
-   height: 300px;
+   width: 1100px;
+   height: 1086px;
    margin: 0 auto;
    position: relative;
    clear: left;
@@ -22,14 +22,65 @@ body
    background-color: #FFFFFF;
    color: #000000;
    font-family: Arial;
-   font-size: 13px;
+   font-size: 8px;
+   line-height: 1.1875;
    margin: 0;
    padding: 0;
 }
-#wb_addStoreForm
+#Image1
+{
+   border: 0px #000000 solid;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#AdvancedButton1
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton2
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton3
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#AdvancedButton4
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text2 div
+{
+   text-align: left;
+}
+#AdvancedButton5
+{
+   border: 1px #FFFFFF solid;
+   background-color: transparent;
+}
+#map_canvas
 {
    background-color: #FAFAFA;
-   border: 0px #000000 solid;
 }
 #wb_Text3 
 {
@@ -42,15 +93,10 @@ body
 {
    text-align: left;
 }
-#nameStore
+#wb_addStoreForm
 {
-   border: 1px #A9A9A9 solid;
-   background-color: #FFFFFF;
-   color :#000000;
-   font-family: Arial;
-   font-size: 13px;
-   text-align: left;
-   vertical-align: middle;
+   background-color: #FAFAFA;
+   border: 0px #000000 solid;
 }
 #wb_Text4 
 {
@@ -62,6 +108,16 @@ body
 #wb_Text4 div
 {
    text-align: left;
+}
+#nameStore
+{
+   border: 1px #A9A9A9 solid;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   text-align: left;
+   vertical-align: middle;
 }
 #wb_Text5 
 {
@@ -82,6 +138,17 @@ body
    text-align: left;
 }
 #wb_Text6 div
+{
+   text-align: left;
+}
+#wb_Text7 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text7 div
 {
    text-align: left;
 }
@@ -129,21 +196,54 @@ body
    right: auto;
    left: 10px;
 }
+#wb_Text8 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text8 div
+{
+   text-align: left;
+}
+#cancelButton
+{
+   font-family: Arial;
+   font-size: 13px;
+   font-weight: normal;
+   font-style: normal;
+}
+#cancelButton .ui-button
+{
+   position: absolute;
+}
+#cancelButton .ui-button-text-icon .ui-button-icon-primary,
+#cancelButton .ui-button-text-icons .ui-button-icon-primary,
+#cancelButton .ui-button-icons-only .ui-button-icon-primary
+{
+   left: auto;
+   right: 10px;
+}
+#cancelButton .ui-button-text-icons .ui-button-icon-secondary,
+#cancelButton .ui-button-icons-only .ui-button-icon-secondary
+{
+   right: auto;
+   left: 10px;
+}
 #addressStore
 {
    position: absolute;
    left: 194px;
-   top: 110px;
-   width: 327px;
+   top: 156px;
+   width: 306px;
    height: 18px;
    line-height: 18px;
    z-index: 5;
 }
 #wb_uid1
 {
-   color: #000000;
-   font-family: Arial;
-   font-size: 13px;
+   text-align: left;
 }
 #wb_uid2
 {
@@ -151,13 +251,80 @@ body
    font-family: Arial;
    font-size: 13px;
 }
+#basicdate
+{
+   color: #000000;
+   font-size: 12px;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+}
+#wb_Text1
+{
+   position: absolute;
+   left: 0px;
+   top: 5px;
+   width: 70px;
+   height: 16px;
+   z-index: 12;
+   text-align: left;
+}
+#Shape1
+{
+   border-width: 0;
+   width: 1054px;
+   height: 550px;
+}
+#cancelButton
+{
+   position: absolute;
+   left: 200px;
+   top: 259px;
+   width: 127px;
+   height: 24px;
+   z-index: 9;
+}
+#wb_Text2
+{
+   position: absolute;
+   left: 170px;
+   top: 2px;
+   width: 127px;
+   height: 19px;
+   z-index: 18;
+   text-align: left;
+}
 #wb_uid3
+{
+   text-align: left;
+}
+#wb_Text3
+{
+   position: absolute;
+   left: 17px;
+   top: 71px;
+   width: 187px;
+   height: 16px;
+   z-index: 21;
+   text-align: left;
+}
+#wb_uid4
 {
    color: #000000;
    font-family: Arial;
    font-size: 13px;
 }
-#wb_Text3
+#wb_Image1
+{
+   position: absolute;
+   left: 379px;
+   top: 0px;
+   width: 300px;
+   height: 65px;
+   z-index: 11;
+}
+#wb_Text4
 {
    position: absolute;
    left: 12px;
@@ -167,14 +334,8 @@ body
    z-index: 0;
    text-align: left;
 }
-#wb_Text4
+#wb_uid5
 {
-   position: absolute;
-   left: 27px;
-   top: 66px;
-   width: 83px;
-   height: 16px;
-   z-index: 2;
    text-align: left;
 }
 #wb_Text5
@@ -182,58 +343,224 @@ body
    position: absolute;
    left: 27px;
    top: 112px;
-   width: 178px;
+   width: 83px;
    height: 16px;
-   z-index: 3;
+   z-index: 2;
    text-align: left;
+}
+#wb_uid6
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
 }
 #wb_Text6
 {
    position: absolute;
    left: 27px;
-   top: 161px;
+   top: 158px;
+   width: 178px;
+   height: 16px;
+   z-index: 3;
+   text-align: left;
+}
+#wb_uid7
+{
+   text-align: left;
+}
+#Html1
+{
+   position: absolute;
+   left: 61px;
+   top: 6px;
+   width: 120px;
+   height: 21px;
+   z-index: 13;
+}
+#wb_Text7
+{
+   position: absolute;
+   left: 27px;
+   top: 207px;
    width: 178px;
    height: 16px;
    z-index: 4;
    text-align: left;
 }
-#addStoreButton
+#wb_uid8
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Image1
+{
+   width: 300px;
+   height: 65px;
+}
+#wb_Text8
 {
    position: absolute;
-   left: 394px;
-   top: 206px;
-   width: 127px;
-   height: 24px;
-   z-index: 7;
+   left: 14px;
+   top: 42px;
+   width: 483px;
+   height: 32px;
+   z-index: 8;
+   text-align: left;
 }
 #gpsStore
 {
    position: absolute;
    left: 194px;
-   top: 155px;
-   width: 327px;
+   top: 201px;
+   width: 305px;
    height: 18px;
    line-height: 18px;
+   z-index: 7;
+}
+#addStoreButton
+{
+   position: absolute;
+   left: 370px;
+   top: 259px;
+   width: 127px;
+   height: 24px;
    z-index: 6;
+}
+#wb_uid10
+{
+   text-align: center;
+}
+#wb_uid9
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 16px;
 }
 #wb_addStoreForm
 {
    position: absolute;
-   left: 6px;
-   top: 5px;
-   width: 625px;
-   height: 257px;
-   z-index: 9;
+   left: 527px;
+   top: 97px;
+   width: 523px;
+   height: 302px;
+   z-index: 23;
+}
+#wb_uid11
+{
+   color: #0000FF;
+   font-family: Arial;
+   font-size: 16px;
+}
+#wb_uid12
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#map_canvas
+{
+   position: absolute;
+   text-align: left;
+   left: 18px;
+   top: 98px;
+   width: 500px;
+   height: 500px;
+   z-index: 20;
 }
 #nameStore
 {
    position: absolute;
    left: 194px;
-   top: 64px;
-   width: 327px;
+   top: 110px;
+   width: 307px;
    height: 18px;
    line-height: 18px;
    z-index: 1;
+}
+#wb_uid13
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_uid14
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#AdvancedButton1
+{
+   position: absolute;
+   left: 759px;
+   top: 6px;
+   width: 60px;
+   height: 24px;
+   z-index: 14;
+}
+#wb_uid15
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#AdvancedButton2
+{
+   position: absolute;
+   left: 677px;
+   top: 6px;
+   width: 92px;
+   height: 24px;
+   z-index: 15;
+}
+#wb_uid16
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#AdvancedButton3
+{
+   position: absolute;
+   left: 825px;
+   top: 6px;
+   width: 67px;
+   height: 24px;
+   z-index: 16;
+}
+#wb_Shape1
+{
+   position: absolute;
+   left: 8px;
+   top: 65px;
+   width: 1054px;
+   height: 550px;
+   z-index: 10;
+}
+#wb_uid17
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#AdvancedButton4
+{
+   position: absolute;
+   left: 877px;
+   top: 6px;
+   width: 103px;
+   height: 24px;
+   z-index: 17;
+}
+#AdvancedButton5
+{
+   position: absolute;
+   left: 283px;
+   top: 0px;
+   width: 96px;
+   height: 24px;
+   z-index: 19;
 }
 #wb_uid0
 {
