@@ -13,14 +13,26 @@
 <script>
 $(document).ready(function()
 {
-   $("#jQueryButton1").button();
+   $("#addStoreButton").button();
 });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true">
 </script>
 <script>
+function addStore(){
+nameStore=$( '#nameStore' ).val();
+addressStore = $('#addressStore').val();
+gpsStore = $( '#gpsStore' ).val();
+url = '/addstore';
+// Send the data using post
+var posting = $.post( url, { p1: nameStore, p2: addressStore, p3:gpsStore } );
+// Put the results in a div
+posting.done(function(data) {
+window.alert(data);
+});
+}
 $(document).ready(function (){
-	function initialize() {
+function initialize() {
 		//действия, если геолокация доступна	
 		function geo_success(position){
 			var mapOptions = {
@@ -39,8 +51,9 @@ $(document).ready(function (){
 			clearTimeout(timeout_id);
 			//действия после перетягивания маркера  
 			function markerMove(){
-				marker.setTitle(""+marker.getPosition());
-				console.log(""+map.getCenter());
+				//marker.setTitle(""+marker.getPosition());
+				gpsStore.value = marker.getPosition();
+				//console.log(""+map.getCenter());
 			}  
 			//листенер перетягивания маркера
 			google.maps.event.addListener(marker, 'dragend', markerMove);	
@@ -94,8 +107,9 @@ $(document).ready(function (){
 			});
 			//действия после перетягивания маркера  
 			function markerMove(){
-				marker.setTitle(""+marker.getPosition());
-				console.log(""+map.getCenter());
+				//marker.setTitle(""+marker.getPosition());
+				gpsStore.value = marker.getPosition();
+				//console.log(""+map.getCenter());
 			}  
 			//листенер перетягивания маркера
 			google.maps.event.addListener(marker, 'dragend', markerMove);	
@@ -149,9 +163,22 @@ $(document).ready(function (){
       <div id="wb_Text3">
          <span id="wb_uid12">Выбор местоположения</span>
       </div>
-      <div id="Layer2" title="">
+      <div id="wb_addStoreForm">
+         <form name="Form1" method="post" action="mailto:yourname@yourdomain.com" enctype="text/plain" id="addStoreForm">
+            <div id="wb_Text4">
+               <span id="wb_uid13"><strong>Добавить магазин</strong></span></div>
+            <input type="text" id="nameStore" name="Editbox1" value="">
+            <div id="wb_Text5">
+               <span id="wb_uid14">Название</span></div>
+            <div id="wb_Text6">
+               <span id="wb_uid15">Адрес</span></div>
+            <div id="wb_Text7">
+               <span id="wb_uid16">GPS координаты</span></div>
+            <input type="text" id="addressStore" name="Editbox1" value="">
+            <input type="button" id="addStoreButton" onclick="addStore();return false;" name="" value="Добавить магазин">
+            <input type="text" id="gpsStore" name="Editbox1" value="">
+         </form>
       </div>
-      <input type="button" id="jQueryButton1" name="" value="Button">
    </div>
 </body>
 </html>
