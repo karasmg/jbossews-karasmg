@@ -31,7 +31,6 @@ import jbossews.model.Store;
 import jbossews.model.StoreDao;
 import jbossews.model.User;
 
-
 /**
  * Servlet implementation class RequestHeader
  */
