@@ -18,14 +18,14 @@
 <script type="text/javascript">
 $(document).ready(function()
 {
-   var AutoComplete2Data = ["Курица", "kurica"];
+   var AutoComplete2Data = [];
    var AutoComplete2Opts =
    {
       source: function(request, response) {
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					jsondata = data; }, 
+					jsondata = data; },
 						"json"
 						), 
 						function(data) {
@@ -41,17 +41,7 @@ $(document).ready(function()
 </script>
 <script>
 $(document).ready(function (){
- $("#AutoComplete2").autocomplete( "option", "source", function(request, response) {
-					$.post("./findforms", 
-					{ query: request.term },
-					function(data){
-					jsondata = data; },						, 
-						"json"
-						), 
-						function(data) {
-						response(jsondata);
-					}
-				});
+ $("#AutoComplete2").autocomplete( "option", "source", );
 });
 </script>
 <script>
@@ -68,7 +58,6 @@ posting.done(function(data) {
 window.alert(data);
 });
 }
-
 function setcookies(){
 document.cookie = 'name=ppool'
 document.cookie = 'domain=ppool.ua';

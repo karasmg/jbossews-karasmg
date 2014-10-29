@@ -51,19 +51,6 @@ public class GetNamesByString extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//настраиваем выходной поток клиенту
-		response.setContentType("text/html;charset=UTF-8");
-//		PrintWriter out = response.getWriter();
-		
-	
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
         response.setHeader("Cache-control", "no-cache, no-store");
         response.setHeader("Pragma", "no-cache");
@@ -98,5 +85,12 @@ public class GetNamesByString extends HttpServlet {
 		out.println(arrayObj.toString());
         out.close();
 		
+	}
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 	}
 }
