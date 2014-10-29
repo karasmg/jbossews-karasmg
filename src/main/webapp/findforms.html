@@ -25,7 +25,8 @@ $(document).ready(function()
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					jsondata = JSON.parse('{'+data+'}'); },
+					var textdata = '["Мешочек сильпо маленький","Мешочек сильпо средний"]';
+					jsondata = JSON.parse(textdata); },
 						"json"
 						), 
 						function(data) {
