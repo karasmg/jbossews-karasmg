@@ -16,7 +16,7 @@ public class Store {
 	 * @param storeId the storeId to set
 	 */
 	public void setStoreId(int storeId) {
-		StoreId = storeId;
+		this.StoreId = storeId;
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class Store {
 	 * @param gpsPoint the gpsPoint to set
 	 */
 	public void setGpsPoint(String gpsPoint) {
-		GpsPoint = gpsPoint;
+		this.GpsPoint = gpsPoint;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class Store {
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
-		Name = name;
+		this.Name = name;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class Store {
 	 * @param address the address to set
 	 */
 	public void setAddress(String address) {
-		Address = address;
+		this.Address = address;
 	}
 
 	private int StoreId;
