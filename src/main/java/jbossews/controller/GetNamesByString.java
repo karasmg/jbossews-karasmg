@@ -34,8 +34,8 @@ import jbossews.model.User;
  */
 @WebServlet("/findforms")
 public class GetNamesByString extends HttpServlet {
-//	static final Logger log = LogManager.getLogger(GetNamesByString.class.getName());
-	//private static final long serialVersionUID = 1L;
+	static final Logger log = LogManager.getLogger(GetNamesByString.class.getName());
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -65,15 +65,15 @@ public class GetNamesByString extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-  //    response.setHeader("Cache-control", "no-cache, no-store");
- //       response.setHeader("Pragma", "no-cache");
-   //     response.setHeader("Expires", "-1");
+        response.setHeader("Cache-control", "no-cache, no-store");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "-1");
         
         JSONArray arrayObj=new JSONArray();
         
         String query = request.getParameter("term");
-        System.out.println(query);
         query = query.toLowerCase();
+        log.error("query = "+query);
         DaoFactory df = new MySqlDaoFactory();
 		CommodityDao cd = null;
 		
@@ -81,14 +81,14 @@ public class GetNamesByString extends HttpServlet {
 		try {
 			cd = new MySqlCommodityDao(df.getConnection());
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+			log.error("cd = new MySqlCommodityDao(df.getConnection()): "+e1.getMessage());
 			e1.printStackTrace();
 		}
 		List<String> jArray = null;
 		try {
 			jArray = cd.getNamesCommoditiesByString(query);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			log.error("jArray = cd.getNamesCommoditiesByString(query): "+e.getMessage());
 			e.printStackTrace();
 		}
 		
