@@ -33,14 +33,14 @@ import jbossews.model.User;
  * Servlet implementation class RequestHeader
  */
 @WebServlet("./findforms")
-public class GetNamesCommoditiesByString extends HttpServlet {
-	static final Logger log = LogManager.getLogger(GetNamesCommoditiesByString.class.getName());
+public class GetNamesByString extends HttpServlet {
+	static final Logger log = LogManager.getLogger(GetNamesByString.class.getName());
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetNamesCommoditiesByString() {
+	public GetNamesByString() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
