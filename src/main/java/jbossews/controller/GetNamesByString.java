@@ -72,7 +72,7 @@ public class GetNamesByString extends HttpServlet {
         JSONArray arrayObj=new JSONArray();
         
         String query = request.getParameter("term");
-        query = query.toLowerCase();
+        //query = query.toLowerCase();
         log.error("query = "+query);
         DaoFactory df = new MySqlDaoFactory();
 		CommodityDao cd = null;
