@@ -25,8 +25,10 @@ $(document).ready(function()
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					var textdata = '["Мешочек сильпо маленький","Мешочек сильпо средний"]';
+					window.alert(data);
+					var textdata = data;
 					jsondata = JSON.parse(textdata); },
+					window.alert(jsondata);
 						"json"
 						), 
 						function(data) {
