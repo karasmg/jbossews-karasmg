@@ -19,5 +19,8 @@ public interface CommodityDao {
 
 	/** Удаляет запись об объекте из базы данных */ 
 	public void delete(Commodity commodity); 
+	
+	/** Выдает String массив для по запросу query */ 	
+	public List<String> getNamesCommoditiesByString(String query) throws SQLException;
 
 }
