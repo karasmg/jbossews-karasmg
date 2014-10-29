@@ -32,10 +32,10 @@ import jbossews.model.User;
 /**
  * Servlet implementation class RequestHeader
  */
-@WebServlet("./findforms")
+@WebServlet("/findforms")
 public class GetNamesByString extends HttpServlet {
-	static final Logger log = LogManager.getLogger(GetNamesByString.class.getName());
-	private static final long serialVersionUID = 1L;
+//	static final Logger log = LogManager.getLogger(GetNamesByString.class.getName());
+	//private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -62,7 +62,6 @@ public class GetNamesByString extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
