@@ -25,7 +25,7 @@ $(document).ready(function()
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					jsondata = JSON.parse(data); },
+					jsondata = JSON.parse(''+data); },
 						"json"
 						), 
 						function(data) {
