@@ -53,7 +53,7 @@ public class GetNamesCommoditiesByString extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		//настраиваем выходной поток клиенту
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
+//		PrintWriter out = response.getWriter();
 		
 	
 	}
