@@ -66,10 +66,9 @@ public class GetNamesCommoditiesByString extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-        response.setContentType("text/html");
-        response.setHeader("Cache-control", "no-cache, no-store");
-        response.setHeader("Pragma", "no-cache");
-        response.setHeader("Expires", "-1");
+  //    response.setHeader("Cache-control", "no-cache, no-store");
+ //       response.setHeader("Pragma", "no-cache");
+   //     response.setHeader("Expires", "-1");
         
         JSONArray arrayObj=new JSONArray();
         
