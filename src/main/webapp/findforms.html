@@ -18,15 +18,40 @@
 <script type="text/javascript">
 $(document).ready(function()
 {
-   var AutoComplete2Data = [];
+   var AutoComplete2Data = ["Курица", "kurica"];
    var AutoComplete2Opts =
    {
-      source: './findforms',
+      source: function(request, response) {
+					$.post("./findforms", 
+					{ query: request.term },
+					function(data){
+					jsondata = data; },						, 
+						"json"
+						), 
+						function(data) {
+						response(jsondata);
+					}
+				},
       delay: 0,
       minLength: 3
    };
    $("#AutoComplete2").autocomplete(AutoComplete2Opts);
    $("#jQueryButton1").button();
+});
+</script>
+<script>
+$(document).ready(function (){
+ $("#AutoComplete2").autocomplete( "option", "source", function(request, response) {
+					$.post("./findforms", 
+					{ query: request.term },
+					function(data){
+					jsondata = data; },						, 
+						"json"
+						), 
+						function(data) {
+						response(jsondata);
+					}
+				});
 });
 </script>
 <script>
@@ -81,7 +106,7 @@ function readcookies(){
             <input type="submit" id="Button3" onclick="showalert();return false;" name="Remember" value="Запомнить">
             <div id="wb_Text3">
                <span id="wb_uid0"><strong>Введите наименование товара</strong></span></div>
-            <input type="text" id="AutoComplete2" name="AutoComplete1" value="">
+            <input type="text" id="AutoComplete2" name="AutoComplete2" value="">
          </form>
       </div>
       <div id="wb_Image1">
