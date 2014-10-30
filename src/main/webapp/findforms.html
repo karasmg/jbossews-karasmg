@@ -25,14 +25,10 @@ $(document).ready(function()
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					
+					response(data);
 					},
 					"json"
-						), 
-						function(data) {
-						window.alert(data);
-						response(data);
-					}
+						) 
 				},
       delay: 0,
       minLength: 3
