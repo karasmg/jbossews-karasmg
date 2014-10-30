@@ -26,14 +26,11 @@ $(document).ready(function()
 					{ query: request.term },
 					function(data){
 					window.alert(data);
-					AutoComplete2Data = "["+data+"]";
-					window.alert(textdata);
-					jsondata = JSON.parse(textdata); 
-					window.alert(jsondata); },
+					},
 					"json"
 						), 
 						function(data) {
-						response(textdata);
+						response(data);
 					}
 				},
       delay: 0,
