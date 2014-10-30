@@ -25,11 +25,12 @@ $(document).ready(function()
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
-					window.alert(data);
+					
 					},
 					"json"
 						), 
 						function(data) {
+						window.alert(data);
 						response(data);
 					}
 				},
