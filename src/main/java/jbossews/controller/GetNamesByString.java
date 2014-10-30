@@ -82,7 +82,7 @@ public class GetNamesByString extends HttpServlet {
 		arrayObj.addAll(jArray);	
 		
 		PrintWriter out = response.getWriter();
-		out.println(arrayObj.toString());
+		out.println(arrayObj);
         out.close();
 		
 	}
