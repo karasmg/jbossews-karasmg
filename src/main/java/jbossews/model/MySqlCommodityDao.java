@@ -76,7 +76,7 @@ public class MySqlCommodityDao implements CommodityDao {
 
 		while (rs.next()) {
 			String g = new String();
-			g = (rs.getString("Name"));
+			g = (rs.getString("names"));
 			list.add(g);
 		}
 
