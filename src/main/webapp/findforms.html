@@ -18,13 +18,20 @@
 <script type="text/javascript">
 $(document).ready(function()
 {
-   var AutoComplete2Data = [];
-   var AutoComplete2Opts =
+	
+	function lensort(a,b){//sort array by string length
+	var st1 = "" + a;
+	var st2 = "" + b;
+	return (st1.length < st2.length) ? -1 : (st1.length > st2.length) ? 1 : 0;
+	};
+   	var AutoComplete2Data = [];
+   	var AutoComplete2Opts =
    {
       source: function(request, response) {
 					$.post("./findforms", 
 					{ query: request.term },
 					function(data){
+						data.sort(lensort);
 					response(data);
 					},
 					"json"
