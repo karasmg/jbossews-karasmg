@@ -57,7 +57,9 @@ public class MySqlCommodityDao implements CommodityDao {
 	}
 
 	public List<String> getNamesCommoditiesByString(String query) throws SQLException {
-		String sql = "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
+		//String sql = "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
+		int spaceCount = query.split(" ").length-1;
+		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") as hhh From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>=3 and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") like '%"+query+"%';";
 		PreparedStatement stm = connection.prepareStatement(sql);
 
 		ResultSet rs = stm.executeQuery();
