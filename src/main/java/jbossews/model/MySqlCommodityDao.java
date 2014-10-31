@@ -9,8 +9,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlCommodityDao implements CommodityDao {
+import jbossews.controller.GetNamesByString;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class MySqlCommodityDao implements CommodityDao {
+	static final Logger log = LogManager.getLogger(MySqlCommodityDao.class.getName());
+	private static final long serialVersionUID = 1L;
+	
 	public MySqlCommodityDao(Connection connection) {
 		super();
 		this.connection = connection;
@@ -59,7 +66,8 @@ public class MySqlCommodityDao implements CommodityDao {
 	public List<String> getNamesCommoditiesByString(String query) throws SQLException {
 		//String sql = "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
 		int spaceCount = query.split(" ").length-1;
-		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+1+") as hhh From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>=1 and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+1+") like '%"+query+"%';";
+		log.error("spaceCount = ", spaceCount);
+		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") as names From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>="+spaceCount+" and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") like '"+query+"%';";
 		PreparedStatement stm = connection.prepareStatement(sql);
 
 		ResultSet rs = stm.executeQuery();
