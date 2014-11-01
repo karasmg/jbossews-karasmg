@@ -1,6 +1,5 @@
 package jbossews.model;
 
-
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,9 +15,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MySqlCommodityDao implements CommodityDao {
-	static final Logger log = LogManager.getLogger(MySqlCommodityDao.class.getName());
+	static final Logger log = LogManager.getLogger(MySqlCommodityDao.class
+			.getName());
 	private static final long serialVersionUID = 1L;
-	
+
 	public MySqlCommodityDao(Connection connection) {
 		super();
 		this.connection = connection;
@@ -27,12 +27,19 @@ public class MySqlCommodityDao implements CommodityDao {
 	private final Connection connection;
 
 	public void create(Commodity commodity) throws SQLException {
-		
-		String sql = "INSERT INTO ppool.Commodity (Name, Units, Manufacturer, Packing, BarCode) VALUES ('"+commodity.getName()+"', '"+commodity.getUnits()+"', '"+commodity.getManufacturer()+"', '"+commodity.getPacking()+"', '"+commodity.getBarCode()+"');";
+
+		String sql = "INSERT INTO ppool.Commodity (Name, Units, Manufacturer, Packing, BarCode) VALUES ('"
+				+ commodity.getName()
+				+ "', '"
+				+ commodity.getUnits()
+				+ "', '"
+				+ commodity.getManufacturer()
+				+ "', '"
+				+ commodity.getPacking()
+				+ "', '" + commodity.getBarCode() + "');";
 		Statement stm = connection.createStatement();
 		stm.executeUpdate(sql);
-		
-		
+
 	}
 
 	@Override
@@ -48,7 +55,7 @@ public class MySqlCommodityDao implements CommodityDao {
 		g.setUnits(rs.getString("Units"));
 		g.setManufacturer(rs.getString("Manufacturer"));
 		g.setPacking(rs.getString("Packing"));
-		g.setBarCode(rs.getString("BarCode"));		
+		g.setBarCode(rs.getString("BarCode"));
 		return g;
 	}
 
@@ -64,11 +71,18 @@ public class MySqlCommodityDao implements CommodityDao {
 
 	}
 
-	public List<String> getNamesCommoditiesByString(String query) throws SQLException {
-		//String sql = "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
-		int spaceCount = (query.length()-query.replaceAll(" ", "").length())+1;
+	public List<String> getNamesCommoditiesByString(String query)
+			throws SQLException {
+		// String sql =
+		// "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
+		int spaceCount = (query.length() - query.replaceAll(" ", "").length()) + 1;
 		log.error("spaceCount = " + spaceCount);
-		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") as names From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>="+spaceCount+" and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "+spaceCount+") like '"+query+"%';";
+		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "
+				+ spaceCount
+				+ ") as names From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>="
+				+ spaceCount
+				+ " and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "
+				+ spaceCount + ") like '" + query + "%' LIMIT 10;";
 		PreparedStatement stm = connection.prepareStatement(sql);
 
 		ResultSet rs = stm.executeQuery();
@@ -83,6 +97,5 @@ public class MySqlCommodityDao implements CommodityDao {
 
 		return list;
 	}
-
 
 }
