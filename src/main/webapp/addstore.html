@@ -17,10 +17,18 @@ $(document).ready(function()
    $("#cancelButton").button();
 });
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1zmghAKZgcSUJ3noXWVwoHl-jynLU05A&v=3&sensor=true">
 </script>
 <script>
 	function addStore(){
+	    input = $( '#gpsStore' ).val();
+	    input = input.replace(' ', '');
+		input = input.replace('(', '');
+		input = input.replace(')', '');
+		//var latlng="http://maps.googleapis.com/maps/api/geocode/json?latlng="+input+"&sensor=true_or_false";
+		//var latlng="http://maps.googleapis.com/maps/api/geocode/json?latlng=48.730217368989926,30.517578250000042&sensor=true_or_false";
+		var adr=$.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=48.730217368989926,30.517578250000042&sensor=true_or_false");
+		window.alert(adr);
 		nameStore=$( '#nameStore' ).val();
 		addressStore = $('#addressStore').val();
 		gpsStore = $( '#gpsStore' ).val();
@@ -38,6 +46,7 @@ function initialize() {
 			nameStore.value = null;
 			addressStore.value = null;
 			gpsStore.value = null;
+			geocoder = new google.maps.Geocoder();
 		//действия, если геолокация доступна	
 		function geo_success(position){
 			var mapOptions = {
