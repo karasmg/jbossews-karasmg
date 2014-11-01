@@ -70,21 +70,26 @@ public class MySqlCommodityDao implements CommodityDao {
 		// TODO Auto-generated method stub
 
 	}
-
+/* Функция по запросу query делает запрос в таблицу Commodity. 
+ * В зависимости от количества пробелов в query, из поля name формируется словарь
+ * из одного слова или из 2 слов или из 3 слов и т.д. И уже к словарю применяется
+ * фильтр query.
+ */
 	public List<String> getNamesCommoditiesByString(String query)
 			throws SQLException {
-		// String sql =
-		// "SELECT Name FROM ppool.Commodity WHERE Name LIKE '%"+query+"%';";
+
+		//Считаем количество пробелов в query
 		int spaceCount = (query.length() - query.replaceAll(" ", "").length()) + 1;
-		log.error("spaceCount = " + spaceCount);
+		
+		//Формруем запрос в зависимости от количества пробелов. 
 		String sql = "SELECT DISTINCT SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "
 				+ spaceCount
 				+ ") as names From ppool.Commodity where (char_length(replace(name,'  ',' ')) - char_length(replace(replace(name,'  ',' '),' ','')))>="
 				+ spaceCount
 				+ " and SUBSTRING_INDEX(replace(name,'  ',' '), ' ', "
 				+ spaceCount + ") like '" + query + "%' LIMIT 10;";
+		
 		PreparedStatement stm = connection.prepareStatement(sql);
-
 		ResultSet rs = stm.executeQuery();
 
 		List<String> list = new ArrayList<String>();
